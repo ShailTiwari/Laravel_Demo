@@ -1,6 +1,5 @@
 <x-header/>
-
-          <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 <x-sidebar/>  
 <x-app-layout>         
  <div class="pcoded-content">
@@ -14,7 +13,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h5>Role List</h5>
-                                    <span class="text-muted"> <a href="{{ route('roles.index') }}" target="_blank">Back</a> Home.</span>
+                                    <span class="text-muted"> <a href="{{ route('dashboard.index') }}" >Home</a> Back.</span>
                                     
                                     <div class="card-header-right">
                                        <!--  <ul class="list-unstyled card-option">
@@ -36,11 +35,11 @@
                                                 <td>{{ ++$i }}</td>
                                                 <td>{{ $role->name }}</td>
                                                 <td>
-                                                    <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">Show</a>
-                                                        <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Edit</a>
+                                                    <a class="btn btn-round btn-sm btn-info" href="{{ route('roles.show',$role->id) }}">Show</a>
+                                                    <a class="btn btn-round btn-sm btn-primary" href="{{ route('roles.edit',$role->id) }}">Edit</a>
                                                   
                                                         {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
-                                                            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                                            {!! Form::submit('Delete', ['class' => 'btn btn-round btn-sm btn-danger']) !!}
                                                         {!! Form::close() !!}
                                                    
                                                 </td>

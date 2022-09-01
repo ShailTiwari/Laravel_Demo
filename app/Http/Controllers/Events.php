@@ -16,27 +16,73 @@ class Events extends Controller
          $this->middleware('permission:role-create', ['only' => ['create','store']]);
          $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
          $this->middleware('permission:role-delete', ['only' => ['destroy']]);
-         $this->page_name="Activitys";
+         $this->page_name="Events";
     }
 
 
 
-      public function index()
+      public function index(Request $request)
     {
-         $users = DB::table('users')->count();
-         $projects = DB::table('projects')->count();
-         $activities = DB::table('activities')->count();
-         $holidays = DB::table('holidays')->count();
-         $attendances = DB::table('attendances')->count();
-         return view('event',
-            [
-                'page_name'=>$this->page_name,
-                'users_count'=>$users,
-                'projects'=>$projects,
-                'activities'=>$activities,
-                'holidays'=>$holidays,
-                'attendances'=>$attendances
-            ]);
+        //
+
+        if($request->ajax()) 
+        {  
+             $data = Event::whereDate('start', '>=', $request->start)
+                       ->whereDate('end',   '<=', $request->end)
+                       ->get(['id', 'title', 'start', 'end']);
+      return response()->json($data);
+
+        return $data;
+
+        }
+        return view('event',['page_name'=>$this->page_name]);
+    }
+
+
+    public function ajax_event_save (Request $request)
+
+    {
+        switch ($request->type) 
+        {
+           case 'add':
+                 $data= new Event();
+                 $data->title=$request->title;
+                 $data->start=$request->start;
+                 $data->end=$request->end;
+                 $event =$data->save();
+                 return response()->json($event);
+                 break;  
+
+           case 'update':
+                 $data= new Event();
+                 $data=Event::find($request->id);
+                 $data->title=$request->title;
+                 $data->start=$request->start;
+                 $data->end=$request->end;
+                 $event =$data->update();
+
+                 return response()->json($event);
+                 break;  
+
+          case 'delete':
+                $flight= new Event();
+                $flight = Event::find($request->id); 
+                $flight->delete();
+                return response()->json($flight);
+                break;
+        }
+
+    }
+
+
+
+
+      public function create(Request $request)
+    {
+        $page_name='Holidays';
+        $list = DB::select('SELECT * from holidays where isactive=1 and isdelete=0 and inuse=1');
+        //return $list;
+        return view('holiday',['page_name'=>$page_name,'holidays'=>$list]);
     }
 
 }

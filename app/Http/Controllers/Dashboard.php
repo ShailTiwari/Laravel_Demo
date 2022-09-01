@@ -20,7 +20,7 @@ class Dashboard extends Controller
 
 
       public function index()
-    {
+    {    
          $users = DB::table('users')->count();
          $projects = DB::table('projects')->count();
          $activities = DB::table('activities')->count();

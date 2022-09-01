@@ -2,15 +2,15 @@
 <x-sidebar/>           
  <div class="pcoded-content">
     <div class="pcoded-inner-content">
-        <div class="main-body">
+        <div class="card main-body">
             <div class="page-wrapper">
-                <div class="page-body">
+                <div class=" page-body">
                      <form id="formAccountSettings" method="POST"action="{{ route('update_setting') }}"  enctype="multipart/form-data">
                           @csrf
                         <div class="row">
 
                            <div class="mb-3 col-md-6"> 
-                            <img src="{{ url('images/'.$member['logo']) }}" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar"/>
+                            <img src="{{ url('images/'.$member['logo']) }}" alt="user-avatar" class="img-fluid"  id="uploadedAvatar"/>
                             <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                                 <span class="d-none d-sm-block">Upload new Logo</span>
                                 <i class="bx bx-upload d-block d-sm-none"></i>
@@ -24,7 +24,7 @@
 
 
                           <div class="mb-3 col-md-6"> 
-                            <img src="{{ url('images/'.$member['invoice_image']) }}" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatarr"/>
+                            <img src="{{ url('images/'.$member['invoice_image']) }}" class="img-fluid"   id="uploadedAvatarr"/>
                             <label for="uploadd" class="btn btn-primary me-2 mb-4" tabindex="0">
                                 <span class="d-none d-sm-block">Upload Invoice Logo</span>
                                 <i class="bx bx-upload d-block d-sm-none"></i>
@@ -82,6 +82,12 @@
                             <label for="phone" class="form-label">phone</label>
                             <input class="form-control" type="text" name="phone" id="phone" value="{{$member['phone']}}" />
                           </div>
+
+                          <div class="mb-3 col-md-6">
+                            <label for="phone" class="form-label">Email</label>
+                            <input class="form-control" type="text" name="email" id="email" value="{{$member['email']}}" />
+                          </div>
+
 
                           <div class="mb-3 col-md-6">
                             <label for="gst_no" class="form-label">Owner Info</label>

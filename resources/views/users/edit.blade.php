@@ -1,29 +1,30 @@
-@extends('layouts.apps')
+<x-header/>
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<x-sidebar/>  
+<x-app-layout>         
+ <div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">   
 
-
-@section('content')
-
-<div class="row">
-
-    <div class="col-lg-12 margin-tb">
-
-        <div class="pull-left">
-
-            <h2>Edit New User</h2>
-
-        </div>
-
-        <div class="pull-right">
-
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
-
-        </div>
-
-    </div>
-
-</div>
-
-
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Edit New User</h5>
+                                    <span class="text-muted"> <a href="{{ route('users.index') }}" >User List</a> Back.</span>
+                                    
+                                    <div class="card-header-right">
+                                       <!--  <ul class="list-unstyled card-option">
+                                            <li><i class="feather icon-maximize full-card"></i></li>
+                                            <li><i class="feather icon-minus minimize-card"></i></li>
+                                            <li><i class="feather icon-trash-2 close-card"></i></li>
+                                        </ul> -->
+                                    </div>
+                                </div>
+                                <div class="card-block">
+                                       
 @if (count($errors) > 0)
 
   <div class="alert alert-danger">
@@ -118,6 +119,30 @@
 </div>
 
 {!! Form::close() !!}
+                                </div>
+                            </div>
+                        </div>
 
 
-@endsection
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+ </div>
+</x-app-layout>
+<x-footer/> 
+
+
+
+
+
+
+
+
+

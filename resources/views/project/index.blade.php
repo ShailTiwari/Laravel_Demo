@@ -10,43 +10,19 @@
                     <meta name="csrf-token" content="{{ csrf_token() }}">
                                     <div class="row">
                                            @foreach($projects as $project)
-                                          <!--  
-                                            <div class="col-lg-12 col-xl-4">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5 class="card-header-text">{{$project->key}}</h5>
-
-                                                    </div>
-                                                    <div  id="items-{{$project->id}}" class="card-block ">
-                                                          <div  class="bg-c-yellow">
-                                                           <div class="col-md-12 m-b-20">
-                                                                <div class="card-sub sortable-moves">
-                                                                    <img  class="img-fluid p-absolute" src="libraries\assets\images\card-block\card1.jpg" alt="Card image cap">
-                                                                    <div class="card-block">
-                                                                        <h4 class="card-title">{{ $project->title }}</h4>
-                                                                        <p class="card-text">{{ $project->description }}</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                              -->
-
                                             <div class="col-md-12 col-xl-4 ">
-                                                <div class="card app-design user-widget-card">
+                                                     <div class="card app-design user-widget-card widget-card-1" style="color: #020202 !important;">
                                                     <div class="card-block">
                                                         <button class="btn btn-primary f-right">{{ $project->remarks }}</button>
                                                         <h6 class="f-w-400 text-muted">{{ $project->title }}</h6>
                                                         <p class="text-c-blue f-w-400">{{ $project->key }}</p>
                                                         <p class="text-muted">{{ $project->description }}</p>
                                                         <div class="design-description d-inline-block m-r-40">
-                                                            <h3 class="f-w-400">678</h3>
-                                                            <p class="text-muted">Question</p>
+                                                            <h3 class="f-w-400">10</h3>
+                                                            <p class="text-muted">Activity</p>
                                                         </div>
                                                         <div class="design-description d-inline-block">
-                                                            <h3 class="f-w-400">1,452</h3>
+                                                            <h3 class="f-w-400">12</h3>
                                                             <p class="text-muted">Comments</p>
                                                         </div>
                                                         <div class="team-box p-b-20">
@@ -64,7 +40,7 @@
                                                                 <div class="progress-bar bg-c-blue" style="width:78% "><label>78%</label></div>
                                                             </div>
                                                         </div>
-                                                        <a href="{{ route('activity.index') }}" class="more-info">Activity Info</a>
+                                                        <a href="projects/activity/{{$project->key}}/{{$project->id}}" class="more-info">Activity Info</a>
                                                     </div>
                                                 </div>
                                             </div>

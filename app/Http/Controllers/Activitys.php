@@ -76,6 +76,33 @@ class Activitys extends Controller
 
 
 
+     public function projects_view($projectname,$id)
+     {
+        $projects = DB::select('select * from projects');
+        $task_status = DB::select('select * from task_status');
+        $issues = DB::select('select * from issues');
+        $assignee = DB::select('select * from users');
+        $reporter = DB::select('select * from users');
+        $labels = DB::select('select * from labels');
+        $flagges = DB::select('select * from flagges');
+        $posts = Activity::where('project', $id)
+                             ->where('isactive', 1)
+                             ->orderBy('order','asc')
+                             ->get();
+        $permission = Permission::get();
+        return view('activity.index', ['page_name'=>$this->page_name,
+            'posts'=>$posts,
+            'projects'=>$projects,
+            'issues'=>$issues,
+            'assignee'=>$assignee,
+            'reporter'=>$reporter,
+            'labels'=>$labels,
+            'flagges'=>$flagges,
+            'task_status'=>$task_status]);
+     }
+
+
+
       public function create_activity_profile(Request $request)
     { 
          $data= new Activity();
@@ -110,6 +137,43 @@ class Activitys extends Controller
         }
 
         return response('Update Successfully.', 200);
+    }
+
+
+    
+
+public function get_activity_info(Request $request)
+    {
+
+       // return response()->json($request->order);
+        $projects = DB::select('SELECT * from projects');
+        $Activity = Activity::where('id', $request->id)
+                             ->first();
+        return response()->json($Activity);
+       // return response($Activity);
+    }
+
+     public function update_activity_profile(Request $request)
+    { 
+         $data= new Activity();
+         $data=Activity::find($request->id);
+         $data->project=$request->project;
+         $data->key='AP-T';
+         $data->icon_picture='';
+         $data->type=$request->type;
+         $data->summary=$request->summary;
+         $data->description=$request->description;
+         $data->assignee=$request->assignee;
+         $data->reporter=$request->reporter;
+         $data->labels=$request->labels;
+         $data->flagged=$request->flagged;
+         $data->isactive=$request->isactive;
+         $data->start=date('Y-m-d');
+         $data->options='1';
+         $data->isconfirm='1';
+         $data->remarks='';
+         $data->save();
+          return back();;                      
     }
 
 

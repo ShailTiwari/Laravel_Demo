@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Setting;
+use Illuminate\Support\Facades\DB;
 
 class Settings extends Controller
 {
@@ -45,6 +46,7 @@ public function index()
          $data->gst_no=$request->gst_no;
          $data->est_info=$request->est_info;
          $data->phone=$request->phone;
+         $data->email=$request->email;
          $data->owner=$request->owner;
          $data->state=$request->state;
          $data->zipCode=$request->zipCode;
@@ -52,4 +54,15 @@ public function index()
         return redirect('setting');   
 
     }
+
+    public function flags()
+    {
+         $page_name="flags";
+         $id=1;
+         $list = DB::select('SELECT * from flagges where isactive=1 and isdelete=0 and inuse=1');
+         return view('master.flags',['page_name'=>$page_name,'flags'=>$list]);
+    }
+
+
+
 }

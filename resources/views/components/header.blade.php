@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Admin</title>
+    <title>{{$main_settings[0]->site_name}}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
     <meta name="keywords" content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="#">
     <!-- Favicon icon -->
-    <link rel="icon" href="{{ asset('libraries\assets\images\favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url('images/'.$main_settings[0]->logo) }}" type="image/x-icon">  
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
     <!-- Required Fremwork -->
@@ -76,7 +76,7 @@
                             <i class="feather icon-menu"></i>
                         </a>
                          <a href="{{ route('dashboard.index') }}">
-                            <img class="img-fluid" src="{{ asset('libraries/assets/images/logo.png') }}" alt="Logo">
+                            <img class="img-fluid" src="{{ url('images/'.$main_settings[0]->logo) }}" alt="Logo">
                         </a> 
 
                         <a class="mobile-options">
@@ -113,36 +113,18 @@
                                             <h6>Notifications</h6>
                                             <label class="label label-danger">New</label>
                                         </li>
+                                        @foreach($user_logs as $logs)
                                         <li>
                                             <div class="media">
-                                                <img class="d-flex align-self-center img-radius" src="{{ asset('') }}" alt="Generic placeholder image">
+                                                <img class="d-flex align-self-center img-radius" src="{{ asset('libraries/assets/images/logo.png') }}" alt="img">
                                                 <div class="media-body">
-                                                    <h5 class="notification-user">John Doe</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
+                                                    <h5 class="notification-user">{{$logs->name}}</h5>
+                                                    <p class="notification-msg">{{$logs->description}}.</p>
+                                                    <span class="notification-time">{{$currentTime->diffInMinutes($logs->created_at)}} minutes ago</span>
                                                 </div>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center img-radius" src="{{ asset('libraries/assets/images/faces/profile/1.png') }}" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Joseph William</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="d-flex align-self-center img-radius" src="{{ asset('libraries/assets/images/avatar-4.jpg') }}" alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Sara Soudein</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        </li> 
+                                         @endforeach
                                     </ul>
                                 </div>
                             </li>
