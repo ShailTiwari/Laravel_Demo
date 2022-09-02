@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Setting;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Settings extends Controller
@@ -51,6 +52,18 @@ public function index()
          $data->state=$request->state;
          $data->zipCode=$request->zipCode;
          $data->save();
+
+            $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Settings  Updated',
+                            'description' =>'Master Settings Updated',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+
+
         return redirect('setting');   
 
     }
@@ -59,9 +72,419 @@ public function index()
     {
          $page_name="flags";
          $id=1;
-         $list = DB::select('SELECT * from flagges where isactive=1 and isdelete=0 and inuse=1');
+         $list = DB::select('SELECT * from flagges where  isdelete=0 and inuse=1');
          return view('master.flags',['page_name'=>$page_name,'flags'=>$list]);
     }
+    
+     public function save_flags(Request $request)
+     {  
+         $insData = array(
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>1,
+                        );
+
+         $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Flags Created',
+                            'description' =>'Master Flags Created',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+
+
+         DB::table('flagges')->insert($insData);
+        return redirect('flags'); 
+
+     }
+
+
+     public function get_flags_info(Request $request)
+    {
+            $flagges = DB::table('flagges')
+            ->select('id','title','description','isactive')
+            ->where('id',$request->id)
+            ->first();
+        return response()->json($flagges);
+    }
+
+
+     public function update_flags(Request $request)
+     {  
+         $updateData = array(
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>$request->isactive,
+                        );
+         $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Flags  Updated',
+                            'description' =>'Master Flags Updated',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+         $affected = DB::table('flagges')
+              ->where('id', $request->id)
+              ->update($updateData);
+        return redirect('flags'); 
+
+     }
+
+
+
+
+      public function labels()
+    {
+         $page_name="labels";
+         $id=1;
+         $list = DB::select('SELECT * from labels where  isdelete=0 and inuse=1');
+         return view('master.labels',['page_name'=>$page_name,'flags'=>$list]);
+    }
+    
+     public function save_labels(Request $request)
+     {  
+         $insData = array(
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>1,
+                        );  
+
+         $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Label  Created',
+                            'description' =>'Master Label Created',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+         DB::table('labels')->insert($insData);
+        return redirect('labels'); 
+
+     }
+
+
+     public function get_labels_info(Request $request)
+    {
+            $labels = DB::table('labels')
+            ->select('id','title','description','isactive')
+            ->where('id',$request->id)
+            ->first();
+        return response()->json($labels);
+    }
+    
+
+     public function update_labels(Request $request)
+     {  
+         $updateData = array(
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>$request->isactive,
+                        );
+
+          $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Label  Update',
+                            'description' =>'Master Label Updated',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+
+
+
+
+         $affected = DB::table('labels')
+              ->where('id', $request->id)
+              ->update($updateData);
+        return redirect('labels'); 
+
+     }
+
+
+
+
+      public function task()
+    {
+         $page_name="task";
+         $list = DB::select('SELECT * from task_status where  isdelete=0 and inuse=1');
+         return view('master.task',['page_name'=>$page_name,'flags'=>$list]);
+    }
+    
+     public function save_task(Request $request)
+     {  
+         $insData = array(
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>1,
+                        );
+           $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Task  Created',
+                            'description' =>'Master Task Created',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+         DB::table('task_status')->insert($insData);
+        return redirect('task'); 
+
+     }
+
+
+     public function get_task_info(Request $request)
+    {
+            $task = DB::table('task_status')
+            ->select('id','title','description','isactive')
+            ->where('id',$request->id)
+            ->first();
+        return response()->json($task);
+    }
+    
+
+     public function update_task(Request $request)
+     {  
+         $updateData = array(
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>$request->isactive,
+                        );
+
+           $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Task Type Update',
+                            'description' =>'Master Task Type Updated',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+
+
+
+         $affected = DB::table('task_status')
+              ->where('id', $request->id)
+              ->update($updateData);
+        return redirect('task'); 
+
+     }
+
+
+
+      public function issue()
+    {
+         $page_name="issue";
+         $id=1;
+         $list = DB::select('SELECT * from issues where  isdelete=0 and inuse=1');
+         return view('master.issue',['page_name'=>$page_name,'flags'=>$list]);
+    }
+    
+     public function save_issue(Request $request)
+     {  
+         $insData = array(
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>1,
+                        );
+            $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Issue Type  Created',
+                            'description' =>'Master Issue Type Created',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+
+         DB::table('issues')->insert($insData);
+        return redirect('issue'); 
+
+     }
+
+
+     public function get_issue_info(Request $request)
+    {
+            $issue = DB::table('issues')
+            ->select('id','title','description','isactive')
+            ->where('id',$request->id)
+            ->first();
+        return response()->json($issue);
+    }
+    
+
+     public function update_issue(Request $request)
+     {  
+         $updateData = array(
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>$request->isactive,
+                        );
+
+           $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Issue Type Update',
+                            'description' =>'Master Issue Type Updated',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+
+
+
+         $affected = DB::table('issues')
+              ->where('id', $request->id)
+              ->update($updateData);
+        return redirect('issue'); 
+
+     }
+
+
+
+      public function department()
+    {
+         $page_name="department";
+         $id=1;
+         $list = DB::select('SELECT * from departments where  isdelete=0 and inuse=1');
+         return view('master.department',['page_name'=>$page_name,'flags'=>$list]);
+    }
+    
+     public function save_department(Request $request)
+     {  
+         $insData = array(
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>1,
+                        );
+            $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Department  Created',
+                            'description' =>'Master Department Created',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+
+         DB::table('departments')->insert($insData);
+        return redirect('department'); 
+
+     }
+
+
+     public function get_department_info(Request $request)
+    {
+            $department = DB::table('departments')
+            ->select('id','title','description','isactive')
+            ->where('id',$request->id)
+            ->first();
+        return response()->json($department);
+    }
+    
+
+     public function update_department(Request $request)
+     {  
+         $updateData = array(
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>$request->isactive,
+                        );
+
+          $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Department Update',
+                            'description' =>'Master Department Updated',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+
+
+
+
+         $affected = DB::table('departments')
+              ->where('id', $request->id)
+              ->update($updateData);
+        return redirect('department'); 
+
+     }
+
+      public function post()
+    {
+         $page_name="post";
+         $departments = DB::select('SELECT * from departments where  isdelete=0 and inuse=1');
+         $list = DB::select('SELECT * from posts where  isdelete=0 and inuse=1');
+         return view('master.post',['page_name'=>$page_name,'flags'=>$list,'departments'=>$departments]);
+    }
+    
+     public function save_post(Request $request)
+     {  
+         $insData = array(
+                            'dept_id' => $request->departmentid,
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>1,
+                        ); 
+
+         $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Post Save',
+                            'description' =>'Master Post Save',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+            DB::table('posts')->insert($insData);
+        return redirect('post'); 
+
+     }
+
+
+     public function get_post_info(Request $request)
+    {
+            $post = DB::table('posts')
+            ->select('id','dept_id','title','description','isactive')
+            ->where('id',$request->id)
+            ->first();
+        return response()->json($post);
+    }
+    
+
+     public function update_post(Request $request)
+     {  
+         $updateData = array(
+                            'dept_id' => $request->departmentid,
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>$request->isactive,
+                        );
+
+            $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Post Update',
+                            'description' =>'Master Post Updated',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+
+
+
+         $affected = DB::table('posts')
+              ->where('id', $request->id)
+              ->update($updateData);
+        return redirect('post'); 
+
+     }
 
 
 

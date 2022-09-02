@@ -30,13 +30,7 @@ return [
     */
 
     'providers' => [
-       // Providers::github(),
-      'github',
-      'facebook',
-      'google',
-      'linkedin',
-     // 'twitter'
-
+        Providers::github(),
     ],
 
     /*

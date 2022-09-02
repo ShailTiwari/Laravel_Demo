@@ -1,18 +1,15 @@
 <x-header/>
-
-          <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-<x-sidebar/>  
-<x-app-layout>         
+<x-sidebar/>       
  <div class="pcoded-content">
     <div class="pcoded-inner-content">
-        <div class="main-body">
+        <div class=" main-body">
             <div class="page-wrapper">   
 
                 <div class="page-body">
                     <div class="row">
                                             <div class="col-sm-12">
                                                 <!-- Draggable default card start -->
-                                                <div class="card">
+                                                <div class="z-depth-top-0 card">
                                                     <div class="card-header">
                                                         <h5>Create Activity</h5>
 
@@ -119,5 +116,4 @@
         </div>
     </div>
  </div>
-</x-app-layout>
 <x-footer/> 

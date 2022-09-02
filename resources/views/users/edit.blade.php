@@ -1,7 +1,5 @@
 <x-header/>
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-<x-sidebar/>  
-<x-app-layout>         
+<x-sidebar/>         
  <div class="pcoded-content">
     <div class="pcoded-inner-content">
         <div class="main-body">
@@ -135,7 +133,6 @@
         </div>
     </div>
  </div>
-</x-app-layout>
 <x-footer/> 
 
 

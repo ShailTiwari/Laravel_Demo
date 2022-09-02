@@ -5,16 +5,29 @@
     <div class="card md-content">
     <div class="card-header">
         <div class="card-header-left ">
-            <h5>Create Flag</h5>
+            <h5>Create Post </h5>
         </div>
     </div>
-        <form id="formAccountSettings" method="POST" action="{{ route('save_flags') }}" enctype="multipart/form-data">
+        <form id="formAccountSettings" method="POST" action="{{ route('save_post') }}" enctype="multipart/form-data">
           @csrf
             <div class="md-content">
-              <div class="col mb-0">
+                
+            <div class="col mb-0">
+                <label for="emailLarge" class="form-label">Department*</label>
+                 <select name="departmentid" class="form-control form-control-primary" id="departmentid" aria-label="Default select example">
+                   @foreach($departments as $department)
+                    <option value="{{$department->id}}" >{{$department->title}}</option>                          
+                   @endforeach
+                  </select>
+              </div> 
+                
+
+             <div class="col mb-0">
                 <label for="emailLarge" class="form-label">Title*</label>
                 <input required name="title"  type="text" id="title" class="form-control"/>
               </div>
+
+              
 
               <div class="col mb-0">
                 <label for="emailLarge" class="form-label">Description*</label>
@@ -34,12 +47,23 @@
     <div class="card md-content">
       <div class="card-header">
         <div class="card-header-left ">
-            <h5>Update Flag</h5>
+            <h5>Update Post </h5>
         </div>
     </div>
-         <form id="formAccountSettings" method="POST" action="{{ route('update_flags') }}" enctype="multipart/form-data">
+         <form id="formAccountSettings" method="POST" action="{{ route('update_post') }}" enctype="multipart/form-data">
           @csrf
             <div class="md-content">
+                 <div class="col mb-0"> 
+                <label for="emailLarge" class="form-label">Department*</label>
+                    <select name="departmentid" class="form-control form-control-primary" id="updatedepartmentid" aria-label="Default select example">
+                   @foreach($departments as $department)
+                    <option value="{{$department->id}}" >{{$department->title}}</option>                          
+                   @endforeach
+                  </select>
+                 </div>
+                
+
+
               <div class="col mb-0">
                 <label for="emailLarge" class="form-label">Title*</label>
                 <input  name="id"  type="hidden" id="updateid" class="form-control"/>
@@ -85,7 +109,7 @@
                                             <div class="col-xl-12 col-md-12">
                                                 <div class="card table-card">
                                                     <div class="card-header">
-                                                        <h5>List Flags</h5>
+                                                        <h5>List post Type</h5>
                                                         <a data-modal="modal-add" class="btn btn-round btn-sm btn-success f-right select_activity   waves-effect  md-trigger">Add</a>
                                                     </div>
                                                     <div class="card-block">
@@ -114,7 +138,7 @@
                                                                 </tbody>
                                                             </table>
                                                             <div class="text-right m-r-20">
-                                                                <!-- <a href="#!" class=" b-b-primary text-primary">View all flag</a> -->
+                                                                <!-- <a href="#!" class=" b-b-primary text-primary">View all Labels</a> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -142,7 +166,7 @@
                     $.ajax({
                             type: "POST",
                             dataType: "json",
-                            url: SITEURL + "/get_flags_info",
+                            url: SITEURL + "/get_post_info",
                             data: {
                                id: id,
                               _token: token
@@ -154,6 +178,7 @@
                                 else {
                                 //  console.log(response.description);
                                   $("#updateid").val(response.id);
+                                  $("#updatedepartmentid").val(response.dept_id);
                                   $("#updatetitle").val(response.title);
                                   $("#updatedescription").val(response.description);
                                   $('#updatestatus').val(response.isactive);

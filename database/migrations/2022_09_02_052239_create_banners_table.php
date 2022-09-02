@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDepartmentsTable extends Migration
+class CreateBannersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,20 @@ class CreateDepartmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('departments', function (Blueprint $table) { 
+        Schema::create('banners', function (Blueprint $table) {
             $table->id();
+            $table->integer('action_id')->default(0);
+            $table->integer('module_id')->default(0);
             $table->string('title')->nullable();
             $table->text('description')->nullable();
+            $table->text('icon')->nullable();
+            $table->text('banner')->nullable();
             $table->integer('isactive')->default(1);
             $table->integer('isdelete')->default(0);
             $table->integer('inuse')->default(1);
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -32,6 +37,6 @@ class CreateDepartmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departments');
+        Schema::dropIfExists('banners');
     }
 }

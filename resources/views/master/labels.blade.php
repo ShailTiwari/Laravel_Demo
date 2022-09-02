@@ -5,10 +5,10 @@
     <div class="card md-content">
     <div class="card-header">
         <div class="card-header-left ">
-            <h5>Create Flag</h5>
+            <h5>Create labels</h5>
         </div>
     </div>
-        <form id="formAccountSettings" method="POST" action="{{ route('save_flags') }}" enctype="multipart/form-data">
+        <form id="formAccountSettings" method="POST" action="{{ route('save_labels') }}" enctype="multipart/form-data">
           @csrf
             <div class="md-content">
               <div class="col mb-0">
@@ -34,10 +34,10 @@
     <div class="card md-content">
       <div class="card-header">
         <div class="card-header-left ">
-            <h5>Update Flag</h5>
+            <h5>Update labels</h5>
         </div>
     </div>
-         <form id="formAccountSettings" method="POST" action="{{ route('update_flags') }}" enctype="multipart/form-data">
+         <form id="formAccountSettings" method="POST" action="{{ route('update_labels') }}" enctype="multipart/form-data">
           @csrf
             <div class="md-content">
               <div class="col mb-0">
@@ -85,7 +85,7 @@
                                             <div class="col-xl-12 col-md-12">
                                                 <div class="card table-card">
                                                     <div class="card-header">
-                                                        <h5>List Flags</h5>
+                                                        <h5>List Labels</h5>
                                                         <a data-modal="modal-add" class="btn btn-round btn-sm btn-success f-right select_activity   waves-effect  md-trigger">Add</a>
                                                     </div>
                                                     <div class="card-block">
@@ -114,7 +114,7 @@
                                                                 </tbody>
                                                             </table>
                                                             <div class="text-right m-r-20">
-                                                                <!-- <a href="#!" class=" b-b-primary text-primary">View all flag</a> -->
+                                                                <!-- <a href="#!" class=" b-b-primary text-primary">View all Labels</a> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -142,7 +142,7 @@
                     $.ajax({
                             type: "POST",
                             dataType: "json",
-                            url: SITEURL + "/get_flags_info",
+                            url: SITEURL + "/get_labels_info",
                             data: {
                                id: id,
                               _token: token

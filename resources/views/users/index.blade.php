@@ -1,38 +1,41 @@
 <x-header/>
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-<x-sidebar/>  
-<x-app-layout>         
+<x-sidebar/>           
  <div class="pcoded-content">
     <div class="pcoded-inner-content">
         <div class="main-body">
-            <div class="page-wrapper">   
+            <div class="page-wrapper">
 
                 <div class="page-body">
                     <div class="row">
-                        <div class="col-xl-12 col-md-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5>Users Management</h5>
-                                    <span class="text-muted"> <a href="{{ route('dashboard.index') }}" >Home</a> Back.</span>
-                                    
-                                    <div class="card-header-right">
-                                       <!--  <ul class="list-unstyled card-option">
-                                            <li><i class="feather icon-maximize full-card"></i></li>
-                                            <li><i class="feather icon-minus minimize-card"></i></li>
-                                            <li><i class="feather icon-trash-2 close-card"></i></li>
-                                        </ul> -->
-                                    </div>
-                                </div>
-                                <div class="card-block">
-                                       <table class="table table-bordered">
-                                          <tr>
-                                             <th>No</th>
-                                             <th>Name</th>
-                                             <th>Roles</th>
-                                             <th>Email</th>
-                                             <th width="280px">Action</th>
-                                          </tr>
-                                            @foreach ($data as $key => $user)
+                              <!-- ticket and update start -->
+                                            <div class="col-xl-12 col-md-12">
+                                                <div class="card table-card">
+                                                    <div class="card-header">
+                                                        <h5>Users Management</h5>
+                                                       <!--  <div class="card-header-right">
+                                                            <ul class="list-unstyled card-option">
+                                                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                                                <li><i class="fa fa-trash close-card"></i></li>
+                                                            </ul>
+                                                        </div> -->
+                                                    </div>
+                                                    <div class="card-block">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover table-borderless">
+                                                                <thead>
+                                                                    <tr>
+                                                                         <th>No</th>
+                                                                         <th>Name</th>
+                                                                         <th>Roles</th>
+                                                                         <th>Email</th>
+                                                                         <th width="280px">Action</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody> 
+                                                                   @foreach ($data as $key => $user)
                                             <tr>
                                                 <td>{{ ++$i }}</td>
                                                 <td>{{ $user->name }}</td>
@@ -53,22 +56,21 @@
                                                 </td>
                                             </tr>
                                             @endforeach
-                                        </table>
-                                </div>
-                            </div>
-                        </div>
-
-
+                                                                   
+                                                                </tbody>
+                                                            </table>
+                                                            <div class="text-right m-r-20">
+                                                                <a href="#!" class=" b-b-primary text-primary">View all Holiday</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                     </div>
                 </div>
-
-
-
-
-
             </div>
+
         </div>
     </div>
  </div>
-</x-app-layout>
 <x-footer/> 

@@ -29,7 +29,7 @@ class Activitys extends Controller
         $reporter = DB::select('select * from users');
         $labels = DB::select('select * from labels');
         $flagges = DB::select('select * from flagges');
-        $posts = DB::select('select * from activities');
+        $posts = DB::select('select * from activities where isactive=1');
         /*$posts = Activity::where('project', $id)
                              ->where('isactive', 1)
                              ->orderBy('order','asc')
@@ -122,6 +122,16 @@ class Activitys extends Controller
          $data->isconfirm='1';
          $data->remarks='';
          $data->save();
+         $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Activity Created',
+                            'description' =>$request->summary.'New Activity Created by '.Auth::user()->name,
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+
         return redirect('activity');                      
     }
 
@@ -173,6 +183,16 @@ public function get_activity_info(Request $request)
          $data->isconfirm='1';
          $data->remarks='';
          $data->save();
+
+         $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Activity Updated',
+                            'description' =>$request->summary.'New Activity Updated by '.Auth::user()->name,
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
           return back();;                      
     }
 

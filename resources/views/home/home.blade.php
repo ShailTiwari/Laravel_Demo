@@ -98,31 +98,23 @@
     <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
 
       <!-- Slide 1 -->
-      <div class="carousel-item active">
+       @foreach($banners as $key => $banner)
+       @if($banner->module_id==1) 
+       @if($key==0)         
+       <div class="carousel-item active">       
+         @else
+       <div class="carousel-item">      
+       @endif
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>{{$main_settings[0]->company_name}}</span></h2>
-          <p class="animate__animated animate__fadeInUp">{{$main_settings[0]->description}}</p>
+          <h2 class="animate__animated animate__fadeInDown">{{ $banner->title }}</h2>
+          <p class="animate__animated animate__fadeInUp">{{ $banner->description }}</p>
           <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
         </div>
-      </div>
+      </div> 
+       @endif     
+      @endforeach
 
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-        </div>
-      </div>
+     
 
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
@@ -145,7 +137,7 @@
           @foreach($projects as $project)
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
             <div class="icon-box">
-              <div class="pic"><img src="{{ url('img/project_img/'.$project->icon_picture) }}" class="img-fluid" alt=""  width="50" height="50"></div>
+              <div class="pic"><img src="{{ url('images/project/'.$project->icon_picture) }}" class="img-fluid" alt=""  width="50" height="50"></div>
               <h4 class="title"><a href="">{{ $project->title }}</a></h4>
               <p class="description">{{ $project->description }}</p>
             </div>
@@ -844,14 +836,14 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Anyar</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>{{$main_settings[0]->site_name}}</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/anyar-free-multipurpose-one-page-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">{{$main_settings[0]->site_name}}</a>
+        Designed by <a href="#">{{$main_settings[0]->site_name}}</a>
       </div>
     </div>
   </footer><!-- End Footer -->

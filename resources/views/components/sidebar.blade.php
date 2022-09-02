@@ -143,18 +143,28 @@
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="{{ route('setting.index') }}" >
+                                            <a href="{{ route('labels') }}" >
                                                 <span class="pcoded-mtext">Labels</span>
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="{{ route('setting.index') }}" >
+                                            <a href="{{ route('task') }}" >
                                                 <span class="pcoded-mtext">Task Status</span>
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="{{ route('setting.index') }}" >
+                                            <a href="{{ route('issue') }}" >
                                                 <span class="pcoded-mtext">Issue Type</span>
+                                            </a>
+                                        </li>                                    
+                                        <li class=" ">
+                                            <a href="{{ route('department') }}">
+                                                <span class="pcoded-mtext">Department</span>
+                                            </a>
+                                        </li>                                    
+                                        <li class=" ">
+                                            <a href="{{ route('post') }}">
+                                                <span class="pcoded-mtext">Post</span>
                                             </a>
                                         </li>
                                     </ul>

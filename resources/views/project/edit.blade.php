@@ -13,21 +13,20 @@
                                   <h5>Add Project details</h5>
 
                               </div>
-                      <div class=" card-block">
-                      <form id="formAccountSettings" method="POST"action="{{ route('save_project') }}" enctype="multipart/form-data">
+                      <div class="card-block">
+                      <form id="formAccountSettings" method="POST"action="{{ route('update_projects_profile') }}" enctype="multipart/form-data">
                           @csrf
-                      <div class="modal-body">  
+                         
 
-                            <div class="d-flex align-items-start align-items-sm-center gap-4">
+                      <div class="d-flex align-items-start align-items-sm-center gap-4">
                         <img
                         id="preview-image"
-                          src="{{ url('images/project/1.png') }}"
-                          alt="user-avatar"
+                          src="{{ url('images/project/'.$member['icon_picture']) }}"
+                          alt="user-avatar" 
                           class="img-70 img-fluid d-block rounded"
                           height="100"
                           width="100"
-
-                        />
+                          />
                         <div class="button-wrapper">
                           <label for="upload" class="me-2 mb-8" tabindex="0">
                             <span class="d-none d-sm-block">Project Icon</span>
@@ -47,50 +46,55 @@
 
 
                         <div class="row">
-                          <div class="mb-6 col-md-6">
+                          <div class="mb-3 col-md-6">
                             <label for="firstName" class="form-label">Name*</label> 
-                            <input required class="form-control" type="text" id="title" name="title" value="" autofocus />
+                            <input class="form-control" type="hidden" id="id" name="id" value="{{$member['id']}}" />
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="title"
+                              name="title"
+                              value="{{$member['title']}}" 
+                              autofocus
+                            />
                           </div>
-                          <div class="mb-6 col-md-6">
+                          <div class="mb-3 col-md-6">
                             <label for="lastName" class="form-label">Key*</label>
-                            <input required class="form-control" type="text" name="key" id="key" value="" />
-                          </div>
-
-                          <div class="mb-12 col-md-12">
-                            <label for="description" class="form-label">Description*</label>
-                           <textarea  name="description" class="form-control" id="description" rows="3"></textarea>
+                            <input class="form-control" type="text" name="key" id="key" value="{{$member['key']}}" />
                           </div>
                          
 
 
-                          <div class="mb-6 col-md-6">
+                           <div class="mb-3 col-md-6">
                             <label class="form-label" for="category">Category</label>
                             <select id="category" name="category" class="form-control select2 form-select">
                                @foreach($project_category as $category)
-                                <option value="{{$category->id}}" >{{$category->title}}</option>
+                                <option value="{{$category->id}}"  @if($category->id == $member['category']) selected @endif >{{$category->title}}</option>
                                @endforeach
                             </select>
                           </div>
 
-                           <div class="mb-6 col-md-6">
+                           <div class="mb-3 col-md-6">
                             <label class="form-label" for="lead">Project lead</label>
                             <select id="lead" name="lead" class="form-control select2 form-select">
                                @foreach($assignee as $lead)
-                                <option value="{{$lead->id}}" >{{$lead->name}}</option>
+                                <option value="{{$lead->id}}"  @if($lead->id == $member['lead']) selected @endif>{{$lead->name}}</option>
                                @endforeach
                             </select>
                           </div>
 
-                           <div class="mb-6 col-md-6">
+                           <div class="mb-3 col-md-6">
                             <label class="form-label" for="default_assigned">Default assignee</label>
                             <select id="default_assigned" name="default_assigned" class="form-control select2 form-select">
                               <option value="0">Unassigneed</option>
                               @foreach($assignee as $lead)
-                                <option value="{{$lead->id}}" >{{$lead->name}}</option>
+                                <option value="{{$lead->id}}"  @if($lead->id == $member['default_assigned']) selected @endif>{{$lead->name}}</option>
                                @endforeach
                             </select>
                           </div>
-                            <div class="mb-12 col-md-12 form-check">
+
+                        </div>
+                           <div class="mb-12 col-md-12">
                               <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
                               <label class="form-check-label" for="terms-conditions">
                                 Connect repositories, documents, and more
@@ -98,21 +102,18 @@
                               </label>
                             </div>
 
-                             <div class="modal-footer">
-                              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                                Close
-                              </button>
-                              <button type="submit" class="btn btn-primary">Create</button>
-                            </div>
+                     
+                        <div class="mt-2">
+                          <button type="submit" class="btn btn-primary me-2">Save changes</button>
+                          <button type="reset" class="btn btn-outline-secondary">Cancel</button>
                         </div>
-                  </div>
-              </form>
-                            </div>
-                        </div>
-                        <!-- Draggable default card start -->
+                      </form>
                     </div>
-                </div>
-                </div>
+                  </div>
+                  <!-- Draggable default card start -->
+              </div>
+            </div>
+          </div>
 
 
 

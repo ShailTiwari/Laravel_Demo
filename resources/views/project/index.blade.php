@@ -1,6 +1,10 @@
 <x-header/>
 <x-sidebar/>  
-<x-app-layout>         
+
+
+
+
+
  <div class="pcoded-content">
     <div class="pcoded-inner-content">
         <div class="main-body">
@@ -13,16 +17,18 @@
                                             <div class="col-md-12 col-xl-4 ">
                                                      <div class="card app-design user-widget-card widget-card-1" style="color: #020202 !important;">
                                                     <div class="card-block">
+
+                                                        <a href="{{url('projects_edit/'.$project->id)}}" data-modal="modal-edit" class="btn btn-warning f-left select_activity   waves-effect  md-trigger">Edit</a>
                                                         <button class="btn btn-primary f-right">{{ $project->remarks }}</button>
                                                         <h6 class="f-w-400 text-muted">{{ $project->title }}</h6>
                                                         <p class="text-c-blue f-w-400">{{ $project->key }}</p>
                                                         <p class="text-muted">{{ $project->description }}</p>
                                                         <div class="design-description d-inline-block m-r-40">
-                                                            <h3 class="f-w-400">10</h3>
+                                                            <h3 class="f-w-400">{{ $project->count_activity }}</h3>
                                                             <p class="text-muted">Activity</p>
                                                         </div>
                                                         <div class="design-description d-inline-block">
-                                                            <h3 class="f-w-400">12</h3>
+                                                            <h3 class="f-w-400"></h3>
                                                             <p class="text-muted">Comments</p>
                                                         </div>
                                                         <div class="team-box p-b-20">
@@ -52,17 +58,8 @@
         </div>
     </div>
  </div>
-</x-app-layout>
-<x-footer/> 
-
- 
-
-
-
-
-
-
-
+<x-footer/> <!-- Select Project Information in Form and update -->
+  
 
 
 

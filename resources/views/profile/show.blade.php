@@ -1,13 +1,11 @@
-<x-header/>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Profile') }}
+        </h2>
+    </x-slot>
 
-          <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-<x-sidebar/>  
-<x-app-layout>         
- <div class="pcoded-content">
-    <div class="pcoded-inner-content">
-        <div class="main-body">
-            <div class="page-wrapper">
-                  <div>
+    <div>
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                 @livewire('profile.update-profile-information-form')
@@ -61,15 +59,4 @@
             @endif
         </div>
     </div>
-
-
-
-            </div>
-            <div id="styleSelector">
-
-            </div>
-        </div>
-    </div>
- </div>
 </x-app-layout>
-<x-footer/> 
