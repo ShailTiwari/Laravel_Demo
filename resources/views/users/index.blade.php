@@ -60,7 +60,7 @@
                                                                 </tbody>
                                                             </table>
                                                             <div class="text-right m-r-20">
-                                                                <a href="#!" class=" b-b-primary text-primary">View all Holiday</a>
+                                                                 {!! $data->links() !!}
                                                             </div>
                                                         </div>
                                                     </div>

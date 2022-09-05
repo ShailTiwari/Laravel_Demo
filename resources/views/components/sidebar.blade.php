@@ -123,7 +123,7 @@
                                         </li>
                                        
                                         <li class=" ">
-                                            <a href="other.htm">
+                                            <a href="{{ route('banner') }}">
                                                 <span class="pcoded-mtext">Banners</span>
                                             </a>
                                         </li>

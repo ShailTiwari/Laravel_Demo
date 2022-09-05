@@ -40,6 +40,11 @@ Route::middleware([
 {
 
     Route::resource('/dashboard', Dashboard::class);
+    Route::get('get_graph', [Dashboard::class,'Get_graph_data']);
+    Route::get('get_attendence_graph', [Dashboard::class,'Get_Attendence_graph_data']);
+
+
+
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
@@ -92,4 +97,9 @@ Route::middleware([
     Route::post('save_post', [Settings::class, 'save_post'])->name('save_post');
     Route::post('get_post_info', [Settings::class, 'get_post_info'])->name('get_post_info');
     Route::post('update_post', [Settings::class, 'update_post'])->name('update_post');
+
+    Route::get('banner', [Settings::class, 'banner'])->name('banner');
+    Route::post('save_banner', [Settings::class, 'save_banner'])->name('save_banner');
+    Route::post('get_banner_info', [Settings::class, 'get_banner_info'])->name('get_banner_info');
+    Route::post('update_banner', [Settings::class, 'update_banner'])->name('update_banner');
 });

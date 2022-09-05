@@ -86,7 +86,7 @@
                         <div class="col-xl-9 col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Sales Analytics</h5>
+                                    <h5>Activity Analytics</h5>
                                     <div class="card-header-right">
                                         <ul class="list-unstyled card-option">
                                             <li><i class="feather icon-maximize full-card"></i></li>
@@ -96,7 +96,10 @@
                                     </div>
                                 </div>
                                 <div class="card-block">
-                                    <div id="sales-analytics" style="height: 265px;"></div>
+                                        <canvas id="doughnutChart"  style="height:100px;"></canvas>
+
+
+                               
                                 </div>
                             </div>
                         </div>
@@ -220,3 +223,278 @@
     </div>
  </div>
 <x-footer/> 
+  <script type="text/javascript">
+  $(document).ready(function(){
+
+   var SITEURL = "{{ url('get_graph') }}"; 
+  $.ajax({
+    url:SITEURL,
+    method: "GET",
+    dataType: "json",
+    success: function(data) {
+      var name = [];
+      var value = [];
+      var bgcolor = [];
+
+      for(var i in data) 
+      {
+        $('#myContainer').append("<p> <span class='fa-xs text-primary mr-1 legend-title'><i class='fa fa-fw fa-square-full'></i></span><span class='legend-text'>"+data[i].name+"</span>  <span class='float-right'>"+data[i].value+"</span></p>");
+        name.push(data[i].name);
+        value.push(data[i].value);
+        bgcolor.push(data[i].bgcolor);
+      }
+
+
+
+
+      var doughnutChartCanvas = $("#doughnutChart").get(0).getContext("2d");
+      var doughnutPieData = {
+        datasets: [{
+          data:value,
+          backgroundColor: ["#1F3BB3",  "#FDD0C7",
+            "#52CDFF",
+            "#81DADA"
+          ],
+          borderColor: [
+            "#1F3BB3",
+            "#FDD0C7",
+            "#52CDFF",
+            "#81DADA"
+          ],
+        }],
+  
+        // These labels appear in the legend and in the tooltips when hovering different arcs
+        labels:name
+      };
+      var doughnutPieOptions = {
+        cutoutPercentage: 50,
+        animationEasing: "easeOutBounce",
+        animateRotate: true,
+        animateScale: false,
+        responsive: true,
+        maintainAspectRatio: true,
+        showScale: true,
+        legend: false,
+        legendCallback: function (chart) {
+          var text = [];
+          text.push('<div class="chartjs-legend"><ul class="justify-content-center">');
+          for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
+            text.push('<li><span style="background-color:' + chart.data.datasets[0].backgroundColor[i] + '">');
+            text.push('</span>');
+            if (chart.data.labels[i]) {
+              text.push(chart.data.labels[i]);
+            }
+            text.push('</li>');
+          }
+          text.push('</div></ul>');
+          return text.join("");
+        },
+        
+        layout: {
+          padding: {
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0
+          }
+        },
+        tooltips: {
+          callbacks: {
+            title: function(tooltipItem, data) {
+              return data['labels'][tooltipItem[0]['index']];
+            },
+            label: function(tooltipItem, data) {
+              return data['datasets'][0]['data'][tooltipItem['index']];
+            }
+          },
+            
+          backgroundColor: '#fff',
+          titleFontSize: 10,
+          titleFontColor: '#0B0F32',
+          bodyFontColor: '#737F8B',
+          bodyFontSize: 8,
+          displayColors: false
+        }
+      };
+      var doughnutChart = new Chart(doughnutChartCanvas, {
+        type: 'doughnut',
+        data: doughnutPieData,
+        options: doughnutPieOptions
+      });
+      document.getElementById('doughnut-chart-legenddd').innerHTML = doughnutChart.generateLegend();
+
+
+
+
+        },
+        error: function(data) 
+          {
+          console.log(data);
+          }
+        });
+        });
+
+
+
+/*Performance line graph*/
+
+ $(document).ready(function(){
+
+   var SITEURL = "{{ url('get_attendence_graph') }}"; 
+   var graphGradient = document.getElementById("performaneLine").getContext('2d');
+      var graphGradient2 = document.getElementById("performaneLine").getContext('2d');
+      var saleGradientBg = graphGradient.createLinearGradient(5, 0, 5, 100);
+      saleGradientBg.addColorStop(0, 'rgba(26, 115, 232, 0.18)');
+      saleGradientBg.addColorStop(1, 'rgba(26, 115, 232, 0.02)');
+      var saleGradientBg2 = graphGradient2.createLinearGradient(100, 0, 50, 150);
+      saleGradientBg2.addColorStop(0, 'rgba(0, 208, 255, 0.19)');
+      saleGradientBg2.addColorStop(1, 'rgba(0, 208, 255, 0.03)');
+
+
+
+  $.ajax({
+    url:SITEURL,
+    method: "GET",
+    dataType: "json",
+    success: function(data) {
+      var name = [];
+      var value = [];
+      var bgcolor = [];
+      var pointBorderColor = [];
+
+      for(var i in data) 
+        { 
+        name.push(data[i].name);
+        value.push(data[i].value);
+        bgcolor.push('#1F3BB3');
+        pointBorderColor.push('#fff');
+        }
+
+
+          var salesTopData = {
+          labels: name,
+          datasets: [
+
+          {
+              label: 'Attendence',
+              data:value,
+              backgroundColor: saleGradientBg,
+              borderColor: [
+                  '#1F3BB3',
+              ],
+              borderWidth: 1.5,
+              fill: true, // 3: no fill
+              pointBorderWidth: 1,
+              pointRadius: [4, 4],
+              pointHoverRadius: [2, 2],
+              pointBackgroundColor:bgcolor,
+              pointBorderColor:pointBorderColor,
+          },
+
+          /*{
+            label: 'Last week',
+            data: [30, 150, 190, 250, 120, 150, 130, 20, 30, 15, 40, 95, 180],
+            backgroundColor: saleGradientBg2,
+            borderColor: [
+                '#52CDFF',
+            ],
+            borderWidth: 1.5,
+            fill: true, // 3: no fill
+            pointBorderWidth: 1,
+            pointRadius: [0, 0, 0, 4, 0],
+            pointHoverRadius: [0, 0, 0, 2, 0],
+            pointBackgroundColor: ['#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF','#52CDFF)'],
+              pointBorderColor: ['#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff','#fff',],
+        }*/]
+      };
+
+      var salesTopOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+          scales: {
+              yAxes: [{
+                  gridLines: {
+                      display: true,
+                      drawBorder: false,
+                      color:"#F0F0F0",
+                      zeroLineColor: '#F0F0F0',
+                  },
+                  ticks: {
+                    beginAtZero: false,
+                    autoSkip: true,
+                    maxTicksLimit: 4,
+                    fontSize: 10,
+                    color:"#6B778C"
+                  }
+              }],
+              xAxes: [{
+                gridLines: {
+                    display: false,
+                    drawBorder: false,
+                },
+                ticks: {
+                  beginAtZero: false,
+                  autoSkip: true,
+                  maxTicksLimit: 7,
+                  fontSize: 10,
+                  color:"#6B778C"
+                }
+            }],
+          },
+          legend:false,
+          legendCallback: function (chart) {
+            var text = [];
+            text.push('<div class="chartjs-legend"><ul>');
+            for (var i = 0; i < chart.data.datasets.length; i++) {
+              console.log(chart.data.datasets[i]); // see what's inside the obj.
+              text.push('<li>');
+              text.push('<span style="background-color:' + chart.data.datasets[i].borderColor + '">' + '</span>');
+              text.push(chart.data.datasets[i].label);
+              text.push('</li>');
+            }
+            text.push('</ul></div>');
+            return text.join("");
+          },
+          
+          elements: {
+              line: {
+                  tension: 0.4,
+              }
+          },
+          tooltips: {
+              backgroundColor: 'rgba(31, 59, 179, 1)',
+          }
+      }
+      var salesTop = new Chart(graphGradient, {
+          type: 'line',
+          data: salesTopData,
+          options: salesTopOptions
+      });
+      document.getElementById('performance-line-legend').innerHTML = salesTop.generateLegend();
+
+
+
+
+
+
+
+
+
+        },
+        error: function(data) 
+          {
+          console.log(data);
+          }
+        });
+        });
+
+
+
+
+
+
+     
+    
+  
+      
+            </script>

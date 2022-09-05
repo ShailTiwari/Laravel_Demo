@@ -106,7 +106,7 @@
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
                                         <i class="feather icon-bell"></i>
-                                        <span class="badge bg-c-pink">5</span>
+                                        <span class="badge bg-c-pink">3</span>
                                     </div>
                                     <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                                         <li>

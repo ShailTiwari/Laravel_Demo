@@ -37,4 +37,20 @@ class Dashboard extends Controller
                 'attendances'=>$attendances
             ]);
     }
+
+
+    public function Get_graph_data()
+    {
+          $data = DB::select('SELECT count(a.id) as value,b.title as name from activities as a left join projects as b on a.project=b.id where b.isactive=1 group by a.project');
+         echo json_encode($data);
+    }
+
+    public function Get_Attendence_graph_data()
+    {
+          $data = DB::select('SELECT count(id) as value,start  as name from attendances group by start order by start desc limit 7');
+         echo json_encode($data);
+    }
+
+
+    
 }

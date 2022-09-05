@@ -259,6 +259,30 @@ Remove the inner padding in Chrome and Safari on macOS.
 Add the correct display in Chrome and Safari.
 */
 
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
 fieldset {
   margin: 0;
   padding: 0;
@@ -330,7 +354,7 @@ audio,
 iframe,
 embed,
 object {
-   /* display: block;*/
+  display: block; /* 1 */
   vertical-align: middle; /* 2 */
 }
 
@@ -356,8 +380,8 @@ video {
   padding-right: 0.75rem;
   padding-bottom: 0.5rem;
   padding-left: 0.75rem;
-  /*font-size: 1rem;*/
- /* line-height: 1.5rem;*/
+  font-size: 1rem;
+  line-height: 1.5rem;
   --tw-shadow: 0 0 #0000;
 }
 

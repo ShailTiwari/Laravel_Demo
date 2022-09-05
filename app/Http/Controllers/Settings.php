@@ -487,5 +487,100 @@ public function index()
      }
 
 
+         public function banner()
+    {
+         $page_name="Banner";
+         $banner_master = DB::select('SELECT * from banner_master where  isdelete=0 and inuse=1');
+          $list = DB::select('SELECT a.id,a.action_id,a.module_id,a.title,a.description,a.icon,a.banner,a.isactive ,a.created_at,
+            b.title as type,b.description from banners as a left join banner_master as b on b.id=a.id where  a.isdelete=0 and a.inuse=1 order by a.id ASC');
+         //$list = DB::select('SELECT * from banners where  isdelete=0 and inuse=1');
+         return view('master.banner',['page_name'=>$page_name,'banners'=>$list,'banner_masters'=>$banner_master]);
+    }
+    public function save_banner(Request $request)
+     {  
+         $insData = array(
+                            'module_id' => $request->banner_masterid,
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>1,
+                        );
+          if($request->file('logo'))
+        {
+            $file= $request->file('logo');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file-> move(public_path('images/slider'), $filename);
+            //$data['profile_picture']= $filename;
+
+             $insData['icon'] = $filename;
+             $insData['banner'] = $filename;
+        }
+
+
+         $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'banner Save',
+                            'description' =>'Master banner Save',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+            DB::table('banners')->insert($insData);
+        return redirect('banner'); 
+
+     }
+
+
+     public function get_banner_info(Request $request)
+    {
+            $banner = DB::table('banners')
+            ->select('id','action_id','module_id','title','description','icon','banner','isactive')
+            ->where('id',$request->id)
+            ->first();
+        return response()->json($banner);
+    }
+    
+
+     public function update_banner(Request $request)
+     {  
+           $updateData=[];
+           
+
+
+         $updateData = array(
+                            'module_id' => $request->banner_masterid,
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>$request->isactive,
+                        );
+
+   if($request->file('invoice_logo'))
+            {
+                $file= $request->file('invoice_logo');
+                $filename= date('YmdHi').$file->getClientOriginalName();
+                $file-> move(public_path('images/slider'), $filename);
+                //$data['profile_picture']= $filename;
+                $updateData['icon'] = $filename;
+                $updateData['banner'] = $filename;
+            }
+            $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'banner Update',
+                            'description' =>'Master banner Updated',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+
+
+
+         $affected = DB::table('banners')
+              ->where('id', $request->id)
+              ->update($updateData);
+        return redirect('banner'); 
+
+     }
+
 
 }

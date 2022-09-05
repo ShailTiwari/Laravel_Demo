@@ -10,7 +10,7 @@
                         <div class="row">
 
                            <div class="mb-3 col-md-6"> 
-                            <img src="{{ url('images/'.$member['logo']) }}" alt="user-avatar" class="img-fluid"  id="uploadedAvatar"/>
+                            <img  height="100" width="100"  src="{{ url('images/'.$member['logo']) }}" alt="user-avatar" class="img-fluid"  id="uploadedAvatar"/>
                             <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                                 <span class="d-none d-sm-block">Upload new Logo</span>
                                 <i class="bx bx-upload d-block d-sm-none"></i>
@@ -24,7 +24,7 @@
 
 
                           <div class="mb-3 col-md-6"> 
-                            <img src="{{ url('images/'.$member['invoice_image']) }}" class="img-fluid"   id="uploadedAvatarr"/>
+                            <img  height="100" width="100"  src="{{ url('images/'.$member['invoice_image']) }}" class="img-fluid"   id="uploadedAvatarr"/>
                             <label for="uploadd" class="btn btn-primary me-2 mb-4" tabindex="0">
                                 <span class="d-none d-sm-block">Upload Invoice Logo</span>
                                 <i class="bx bx-upload d-block d-sm-none"></i>

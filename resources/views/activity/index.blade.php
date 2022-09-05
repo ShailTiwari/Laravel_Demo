@@ -1,11 +1,8 @@
 <x-header/>
 <x-sidebar/>
-  <div class="z-depth-top-0 md-modal md-effect-11" id="modal-11">
-    <div class="card md-content"> <div class="card-header">
-        <div class="card-header-left ">
-            <h5>Create Activity</h5>
-        </div>
-    </div>
+  <div class="md-modal md-effect-11" id="modal-11">
+    <div class="card md-content">
+      <h5>Create Activity</h5> 
         <form id="formAccountSettings" method="POST" action="{{ route('create_activity') }}" enctype="multipart/form-data">
           @csrf
          <div class="md-content">
