@@ -19,9 +19,9 @@ class CreateSettingsTable extends Migration
             $table->string('company_name')->nullable();
             $table->string('sort_name')->nullable();
             $table->text('description')->nullable();
-            $table->text('logo')->default('1.jpg');
-            $table->text('image')->default('1.jpg');
-            $table->text('invoice_image')->default('1.jpg');
+            $table->string('logo')->default('no_image.png');
+            $table->string('image')->default('no_image.png');
+            $table->string('invoice_image')->default('no_image.png');
             $table->text('address')->nullable();
             $table->string('state')->nullable();
             $table->string('zipCode')->nullable();

@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
                 'email_verified_at' => now(),
                 'password' => '$10$WQpf4lYexhcp2sPDSJbEhe8RFMHpwiXLM3gjREyGbFi00HWONSAy.', // password
                 'remember_token' => Str::random(10),         
-                'profile_photo_path' =>'no_image.png'
+                'profile_photo_path' =>'profile-photos/no_image.png'
             ]);
 
 
@@ -121,8 +121,7 @@ class DatabaseSeeder extends Seeder
                 'remarks' => $faker->sentence($nbWords = 6, $variableNbWords = true),               
                 'isactive' => 1,
                 'isdelete' => 0,
-                'inuse' => 1,              
-                'options' => 1,
+                'inuse' => 1,   
                 'created_by' => 1,
                 'updated_by' => 1
             ]);

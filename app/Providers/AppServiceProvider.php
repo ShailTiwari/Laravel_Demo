@@ -33,6 +33,9 @@ class AppServiceProvider extends ServiceProvider
       {
          $currentTime = Carbon::now();
          $user_logs = DB::select('SELECT a.id,a.action_id,a.module_id,a.title,a.description,a.created_at,b.name,b.profile_photo_path from userlogs as a left join users as b on b.id=a.created_by order by id desc limit 3');
+
+
+
          $settings = DB::select('SELECT * from settings where id=1');
          $sidebars = DB::select('SELECT * from sidebars');
 

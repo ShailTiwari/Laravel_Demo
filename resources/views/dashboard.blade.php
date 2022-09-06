@@ -132,7 +132,7 @@
                         <div class="col-xl-6 col-md-12">
                             <div class="card user-activity-card">
                                                     <div class="card-header">
-                                                        <h5>User Activity</h5>
+                                                        <h5>Last User Activity</h5>
                                                     </div>
                                                     <div class="card-block">
                                                          @foreach($user_logs as $logs)
@@ -140,7 +140,7 @@
                                                             <div class="col-auto p-r-0">
                                                                 <div class="u-img">
                                                                     <!-- <img src="{{ asset('libraries/assets/images/logo.png') }}" alt="user" class="img-radius cover-img"> -->
-                                                                    <img src="{{ asset('libraries/assets/images/logo.png') }}" alt="user image" class="img-radius profile-img">
+                                                                    <img src="{{ url('storage/'.$logs->profile_photo_path) }}" alt="user" class="img-radius profile-img">
                                                                 </div>
                                                             </div>
                                                             <div class="col">
@@ -152,7 +152,7 @@
                                                         @endforeach
 
                                                         <div class="text-center">
-                                                            <a href="#!" class="b-b-primary text-primary">View all</a>
+                                                            <!-- <a href="#!" class="b-b-primary text-primary">View all</a> -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -164,7 +164,7 @@
                                     <div class="col-sm-4 bg-c-lite-green user-profile">
                                         <div class="card-block text-center text-white">
                                             <div class="m-b-25">
-                                                <img src="{{ asset('libraries/assets/images/avatar-4.jpg') }}" class="img-radius" alt="User-Profile-Image">
+                                                <img src="{{ url('storage/'.Auth::user()->profile_photo_path) }}" style="max-width: 50%!important;" class="img-fluid img-radius" alt="Profile">
                                             </div>
                                             <h6 class="f-w-600">{{ Auth::user()->name }}</h6>
                                             <p>{{ Auth::user()->role }}</p>

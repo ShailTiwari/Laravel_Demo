@@ -76,7 +76,7 @@
                             <i class="feather icon-menu"></i>
                         </a>
                          <a href="{{ route('dashboard.index') }}">
-                            <img class="img-fluid" src="{{ url('images/'.$main_settings[0]->logo) }}" alt="Logo">
+                            <img  class="img-fluid" src="{{ url('images/'.$main_settings[0]->logo) }}" alt="{{$main_settings[0]->site_name}}">
                         </a> 
 
                         <a class="mobile-options">
@@ -116,7 +116,7 @@
                                         @foreach($user_logs as $logs)
                                         <li>
                                             <div class="media">
-                                                <img class="d-flex align-self-center img-radius" src="{{ asset('libraries/assets/images/logo.png') }}" alt="img">
+                                                <img class="d-flex align-self-center img-radius" src="{{ url('storage/'.$logs->profile_photo_path) }}" alt="img">
                                                 <div class="media-body">
                                                     <h5 class="notification-user">{{$logs->name}}</h5>
                                                     <p class="notification-msg">{{$logs->description}}.</p>
@@ -140,7 +140,7 @@
                                 <div class="dropdown-primary dropdown">
 
                                     <div class="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" class="img-radius" alt="User-Profile-Image">
+                                        <img style="max-width: 50%!important;" class="img-fluid img-radius" src="{{ url('storage/'.Auth::user()->profile_photo_path) }}" alt="{{ Auth::user()->name }}"  alt="User-Profile-Image">
                                         <span> {{ Auth::user()->name }}</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>

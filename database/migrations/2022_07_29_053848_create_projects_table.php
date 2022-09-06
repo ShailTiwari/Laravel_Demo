@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('key')->nullable();
             $table->date('start')->nullable();
             $table->text('description')->nullable();
-            $table->text('icon_picture')->default('1.jpg');
+            $table->string('icon_picture')->default('no_image.png');
             $table->integer('category')->nullable();
             $table->integer('lead')->nullable();
             $table->integer('default_assigned')->nullable();

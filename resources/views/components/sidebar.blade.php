@@ -4,21 +4,21 @@
                     <nav class="pcoded-navbar">
                         <div class="pcoded-inner-navbar main-menu">
                             <ul class="pcoded-item pcoded-left-item">
+
+                                 <div class="pcoded-navigatio-lavel">Main</div>
                                 <li class="active pcoded-trigger">
                                     <a href="{{ route('dashboard.index') }}">
                                         <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                                         <span class="pcoded-mtext">Dashboard</span>
                                         <span class="pcoded-badge label label-danger">Home</span>
-                                    </a>
-                                   
+                                    </a>                                   
                                 </li>
                                 <li class="active pcoded-trigger">
                                     <a href="{{ route('event.index') }}">
                                         <span class="pcoded-micon"><i class="feather icon-aperture rotate-refresh"></i><b>A</b></span>
                                         <span class="pcoded-mtext">Event</span>
                                         <span class="pcoded-badge label label-warning">Calender</span>
-                                    </a>
-                                   
+                                    </a>                                   
                                 </li>
 
 
@@ -33,7 +33,6 @@
 
 
                                 
-                                 <div class="pcoded-navigatio-lavel">Project</div>
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="feather icon-package"></i></span>
@@ -43,17 +42,23 @@
                                     <ul class="pcoded-submenu">
                                         <li class=" ">
                                             <a href="{{ route('project.index') }}">
-                                                <span class="pcoded-mtext">list</span>
+                                                <span class="pcoded-mtext">Project list</span>
                                             </a>
                                         </li>
                                         <li class=" ">
                                             <a href="{{ route('project.create') }}">
-                                                <span class="pcoded-mtext">Create</span>
+                                                <span class="pcoded-mtext">Create Project</span>
+                                            </a>
+                                        </li>
+
+                                        <li class=" ">
+                                            <a href="{{ route('activity.create') }}">
+                                                <span class="pcoded-mtext">Create Activity</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </li> 
-                                <li class="pcoded-hasmenu">
+                               <!--  <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
                                         <span class="pcoded-mtext">Activity</span>
@@ -65,13 +70,8 @@
                                                 <span class="pcoded-mtext">list</span>
                                             </a>
                                         </li>
-                                        <li class=" ">
-                                            <a href="{{ route('activity.create') }}">
-                                                <span class="pcoded-mtext">Create</span>
-                                            </a>
-                                        </li>
                                     </ul>
-                                </li>
+                                </li> -->
 
 
                                   

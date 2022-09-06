@@ -19,17 +19,17 @@
                                                     <div class="card-block">
 
                                                         <a href="{{url('projects_edit/'.$project->id)}}" data-modal="modal-edit" class="btn btn-warning f-left select_activity   waves-effect  md-trigger">Edit</a>
-                                                        <button class="btn btn-primary f-right">{{ $project->remarks }}</button>
+                                                        <button class="btn btn-primary f-right">{{ substr($project->remarks, 0,  5) }}</button>
                                                         <h6 class="f-w-400 text-muted">{{ $project->title }}</h6>
-                                                        <p class="text-c-blue f-w-400">{{ $project->key }}</p>
-                                                        <p class="text-muted">{{ $project->description }}</p>
+                                                        <p class="text-c-blue f-w-400">Key: {{ $project->key }}</p>
+                                                        <p class="text-muted">{{ substr($project->description, 0,  100) }}</p>
                                                         <div class="design-description d-inline-block m-r-40">
                                                             <h3 class="f-w-400">{{ $project->count_activity }}</h3>
                                                             <p class="text-muted">Activity</p>
                                                         </div>
                                                         <div class="design-description d-inline-block">
-                                                            <h3 class="f-w-400"></h3>
-                                                            <p class="text-muted">Comments</p>
+                                                            <h3 class="f-w-400">0</h3>
+                                                            <p class="text-muted">Action</p>
                                                         </div>
                                                         <div class="team-box p-b-20">
                                                             <p class="d-inline-block m-r-20 f-w-400">Team</p>

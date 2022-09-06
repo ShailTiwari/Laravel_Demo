@@ -28,7 +28,7 @@ class CreateActivitiesTable extends Migration
             $table->date('start')->nullable();
             $table->integer('options')->default(0);
             $table->string('key')->nullable();
-            $table->text('icon_picture')->default('1.jpg');
+            $table->string('icon_picture')->default('no_image.png');
             $table->integer('isconfirm')->default(1);
             $table->text('remarks')->nullable();
             $table->integer('isactive')->default(1);
