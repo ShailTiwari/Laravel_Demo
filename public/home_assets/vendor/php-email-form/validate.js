@@ -21,9 +21,9 @@
         displayError(thisForm, 'The form action property is not set!')
         return;
       }
-      thisForm.querySelector('.loading').classList.add('d-block');
+      /*thisForm.querySelector('.loading').classList.add('d-block');
       thisForm.querySelector('.error-message').classList.remove('d-block');
-      thisForm.querySelector('.sent-message').classList.remove('d-block');
+      thisForm.querySelector('.sent-message').classList.remove('d-block');*/
 
       let formData = new FormData( thisForm );
 
@@ -49,7 +49,12 @@
     });
   });
 
-  function php_email_form_submit(thisForm, action, formData) {
+  function php_email_form_submit(thisForm, action, formData) 
+  {
+   var token = document.getElementsByName("_token").value;
+  // var token = $('meta[name="csrf-token"]').attr('content');
+
+   console.log(token);
     fetch(action, {
       method: 'POST',
       body: formData,

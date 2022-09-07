@@ -1,5 +1,41 @@
 <x-header/>
-<x-sidebar/>           
+<x-sidebar/>  
+ <div class="z-depth-top-0 md-modal md-effect-11" id="modal-add">
+    <div class="card md-content">
+    <div class="card-header">
+        <div class="card-header-left ">
+            <h5>Add Holiday</h5>
+        </div>
+    </div>
+        <form id="formAccountSettings" method="POST" action="{{ route('save_holiday') }}" enctype="multipart/form-data">
+          @csrf
+            <div class="md-content">
+
+              <div class="col mb-0">
+                <label for="date" class="form-label">Date*</label>
+                <input required name="start"  type="date" id="start" class="form-control"/>
+              </div>
+
+              <div class="col mb-0">
+                <label for="emailLarge" class="form-label">Title*</label>
+                <input required name="title"  type="text" id="title" class="form-control"/>
+              </div>
+
+              <div class="col mb-0">
+                <label for="emailLarge" class="form-label">Description*</label>
+                <textarea required name="description" class="form-control" id="description" rows="3"></textarea>
+              </div>
+         
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-round btn-sm btn-default waves-effect  md-close" >Close</button>
+                  <button type="submit" class="btn btn-round btn-sm btn-primary waves-effect waves-light ">Save</button>
+              </div>
+            </div>
+        </form>
+      </div>            
+  </div>
+
+
  <div class="pcoded-content">
     <div class="pcoded-inner-content">
         <div class="main-body">
@@ -12,15 +48,7 @@
                                                 <div class="card table-card">
                                                     <div class="card-header">
                                                         <h5>List Holiday</h5>
-                                                       <!--  <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                                                <li><i class="fa fa-window-maximize full-card"></i></li>
-                                                                <li><i class="fa fa-minus minimize-card"></i></li>
-                                                                <li><i class="fa fa-refresh reload-card"></i></li>
-                                                                <li><i class="fa fa-trash close-card"></i></li>
-                                                            </ul>
-                                                        </div> -->
+                                                        <a data-modal="modal-add" class="btn btn-round btn-sm btn-success f-right select_activity   waves-effect  md-trigger">Add</a>
                                                     </div>
                                                     <div class="card-block">
                                                         <div class="table-responsive">
@@ -46,7 +74,7 @@
                                                                 </tbody>
                                                             </table>
                                                             <div class="text-right m-r-20">
-                                                                <a href="#!" class=" b-b-primary text-primary">View all Holiday</a>
+                                                                 {!! $holidays->links() !!}
                                                             </div>
                                                         </div>
                                                     </div>

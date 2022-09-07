@@ -23,13 +23,14 @@ class Activitys extends Controller
 
      public function index()
      {
-        $projects = DB::select('select * from projects');
-        $task_status = DB::select('select * from task_status');
+        
+        $projects = DB::select('select * from projects  where isactive=1');
+        $task_status = DB::select('select * from task_status where isactive=1');
         $issues = DB::select('select * from issues');
         $assignee = DB::select('select * from users');
         $reporter = DB::select('select * from users');
-        $labels = DB::select('select * from labels');
-        $flagges = DB::select('select * from flagges');
+        $labels = DB::select('select * from labels  where isactive=1');
+        $flagges = DB::select('select * from flagges  where isactive=1');
         $posts = DB::select('select * from activities where isactive=1');
         /*$posts = Activity::where('project', $id)
                              ->where('isactive', 1)
@@ -51,13 +52,14 @@ class Activitys extends Controller
 
      public function create()
      {
-        $projects = DB::select('select * from projects');
-        $task_status = DB::select('select * from task_status');
+        
+        $projects = DB::select('select * from projects  where isactive=1');
+        $task_status = DB::select('select * from task_status where isactive=1');
         $issues = DB::select('select * from issues');
         $assignee = DB::select('select * from users');
         $reporter = DB::select('select * from users');
-        $labels = DB::select('select * from labels');
-        $flagges = DB::select('select * from flagges');
+        $labels = DB::select('select * from labels  where isactive=1');
+        $flagges = DB::select('select * from flagges  where isactive=1');
         $posts = DB::select('select * from activities');
         /*$posts = Activity::where('project', $id)
                              ->where('isactive', 1)
@@ -79,15 +81,16 @@ class Activitys extends Controller
 
      public function projects_view($projectname,$id)
      {
-        $projects = DB::select('select * from projects');
-        $task_status = DB::select('select * from task_status');
+        $projects = DB::select('select * from projects  where isactive=1');
+        $task_status = DB::select('select * from task_status where isactive=1');
         $issues = DB::select('select * from issues');
         $assignee = DB::select('select * from users');
         $reporter = DB::select('select * from users');
-        $labels = DB::select('select * from labels');
-        $flagges = DB::select('select * from flagges');
+        $labels = DB::select('select * from labels  where isactive=1');
+        $flagges = DB::select('select * from flagges  where isactive=1');
         $posts = Activity::where('project', $id)
-                             ->where('isactive', 1)
+                         ->where('isactive', '=', 1)
+                         ->where('isdelete', '=', 0)
                              ->orderBy('order','asc')
                              ->get();
         $permission = Permission::get();
@@ -159,6 +162,8 @@ public function get_activity_info(Request $request)
        // return response()->json($request->order);
         $projects = DB::select('SELECT * from projects');
         $Activity = Activity::where('id', $request->id)
+                         ->where('isactive', '=', 1)
+                         ->where('isdelete', '=', 0)
                              ->first();
         return response()->json($Activity);
        // return response($Activity);

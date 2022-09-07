@@ -6,14 +6,14 @@
                             <ul class="pcoded-item pcoded-left-item">
 
                                  <div class="pcoded-navigatio-lavel">Main</div>
-                                <li class="active pcoded-trigger">
+                                <li class=" pcoded-trigger">
                                     <a href="{{ route('dashboard.index') }}">
                                         <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                                         <span class="pcoded-mtext">Dashboard</span>
                                         <span class="pcoded-badge label label-danger">Home</span>
                                     </a>                                   
                                 </li>
-                                <li class="active pcoded-trigger">
+                                <li class="pcoded-trigger">
                                     <a href="{{ route('event.index') }}">
                                         <span class="pcoded-micon"><i class="feather icon-aperture rotate-refresh"></i><b>A</b></span>
                                         <span class="pcoded-mtext">Event</span>
@@ -22,8 +22,8 @@
                                 </li>
 
 
-                                <li class="active pcoded-trigger">
-                                    <a href="{{ route('event.create') }}">
+                                   <li class="pcoded-hasmenu"> 
+                                    <a href="{{ route('holiday') }}">
                                         <span class="pcoded-micon"><i class="feather icon-calendar"></i><b>A</b></span>
                                         <span class="pcoded-mtext">Holiday</span>
                                         <span class="pcoded-badge label label-warning">Calender</span>
@@ -33,14 +33,24 @@
 
 
                                 
-                                <li class="pcoded-hasmenu">
+                               
+                                    @if(1==2)                                     
+                                          <li class="pcoded-hasmenu active pcoded-trigger">
+                                    @else
+                                          <li class="pcoded-hasmenu">     
+                                    @endif
+
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="feather icon-package"></i></span>
                                         <span class="pcoded-mtext">Project</span>
                                         
                                     </a>
                                     <ul class="pcoded-submenu">
-                                        <li class=" ">
+                                          @if(1==2)                                     
+                                          <li class="active">
+                                         @else
+                                          <li class="">   
+                                          @endif
                                             <a href="{{ route('project.index') }}">
                                                 <span class="pcoded-mtext">Project list</span>
                                             </a>
@@ -58,31 +68,11 @@
                                         </li>
                                     </ul>
                                 </li> 
-                               <!--  <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
-                                        <span class="pcoded-mtext">Activity</span>
-                                        
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="{{ route('activity.index') }}">
-                                                <span class="pcoded-mtext">list</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li> -->
-
-
-                                  
-
-
-
 
                             </ul>
                             <div class="pcoded-navigatio-lavel">Master</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                 <li class="active pcoded-trigger">
+                                 <li class="pcoded-trigger">
                                     <a href="{{ route('users.index') }}">
                                         <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                                         <span class="pcoded-mtext">Users</span>

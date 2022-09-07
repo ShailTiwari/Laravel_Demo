@@ -6,7 +6,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>{{$main_settings[0]->site_name}}</title>
   <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="" name="keywords"> 
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Favicons -->
   <link rel="shortcut icon" href="{{ url('images/'.$main_settings[0]->logo) }}" rel="icon" />  
@@ -55,7 +56,12 @@
   <header id="header" class="fixed-top d-flex align-items-center ">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="/">{{$main_settings[0]->site_name}}</a></h1>
+      <h1 class="logo"><a href="/">{{$main_settings[0]->site_name}}
+
+
+
+
+</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href=index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -90,8 +96,20 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
+
+
     </div>
   </header><!-- End Header -->
+
+      
+
+       @if(Session::has('success'))
+          <div class="alert alert-warning alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>Success!</strong> {{ Session::get('success') }}
+          </div>
+
+        @endif
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex justify-cntent-center align-items-center">
@@ -127,8 +145,12 @@
     </div>
   </section><!-- End Hero -->
 
-  <main id="main">
 
+
+
+
+  <main id="main">
+    
     <!-- ======= Icon Boxes Section ======= -->
     <section id="icon-boxes" class="icon-boxes">
       <div class="container">
@@ -159,26 +181,24 @@
 
         <div class="section-title">
           <h2>About Us</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Aloha Technology enables enterprises all over the world to develop a competitive advantage by making their current operations efficient & cost effective. With over 12 years of experience and 3 development centers in India, Aloha Technology is a leading provider of Information Technology Services. .</p>
         </div>
 
         <div class="row content">
           <div class="col-lg-6">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              We have transformed from an offshore development company to an offshore
+R&D investment destination for leading ISVs across the world.
             </p>
             <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+              <li><i class="ri-check-double-line"></i> Get infinite resources and infrastructure at your disposal</li>
+              <li><i class="ri-check-double-line"></i> Experience the Cloud based Project management, Source control and Bug tracking tools.</li>
+              <li><i class="ri-check-double-line"></i> Consult with Industry experienced professionals to ensure a state of the art solution</li>
             </ul>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+             Leading ISVs look at us as a strategic R&D outsourcing and end to end product development choice. We have been retained by companies which are leading innovators in their domains. We achieve this by sharing their product vision right from the competitive pressures they face, to creating new products or adding new features to existing ones and bringing them to market faster. .
             </p>
             <a href="#" class="btn-learn-more">Learn More</a>
           </div>
@@ -193,14 +213,14 @@
 
         <div class="clients-slider swiper">
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{ url('images/clients/client-1.png') }}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{ url('images/clients/client-2.png') }}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{ url('images/clients/client-3.png') }}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{ url('images/clients/client-4.png') }}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{ url('images/clients/client-5.png') }}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{ url('images/clients/client-6.png') }}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{ url('images/clients/client-7.png') }}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{{ url('images/clients/client-8.png') }}" class="img-fluid" alt=""></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -214,22 +234,21 @@
 
         <div class="row">
 
-          <div class="col-lg-5 align-items-stretch position-relative video-box" style='background-image: url("assets/img/why-us.jpg");' data-aos="fade-right">
+          <div class="col-lg-5 align-items-stretch position-relative video-box" style='background-image: url("images/clients/client-1.png");' data-aos="fade-right">
             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn mb-4"></a>
           </div>
 
           <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch" data-aos="fade-left">
 
             <div class="content">
-              <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              <h3>Aloha Technology Opportunities in <strong>PAAS-Based Software Products Reviews</strong></h3>
+              <p>Aloha Technology Reviews: Digital disruption is transforming businesses, and how! While earlier, software was developed for users in an enterprise or SME, the emergence of SMACIA has triggered software development
               </p>
             </div>
 
             <div class="accordion-list">
               <ul>
-                <li data-aos="fade-up" data-aos-delay="100">
+                <!-- <li data-aos="fade-up" data-aos-delay="100">
                   <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                     <p>
@@ -254,7 +273,7 @@
                       Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
                     </p>
                   </div>
-                </li>
+                </li> -->
 
               </ul>
             </div>
@@ -729,7 +748,7 @@
 
           <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="100">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="{{ route('contact_us') }}" name="contactUsForm" id="contactUsForm" method="post"  class="php-email-form">@csrf
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -746,10 +765,10 @@
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
-                <div class="error-message"></div>
+                <div class="sent-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button  id="submit" type="submit">Send Message</button></div>
             </form>
 
           </div>
@@ -768,8 +787,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4>What can we help you with?</h4>
+            <p>Provide your email address to let us help you better.</p>
           </div>
           <div class="col-lg-6">
             <form action="" method="post">
@@ -857,7 +876,6 @@
   <script src="{{ asset('home_assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
   <script src="{{ asset('home_assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
   <script src="{{ asset('home_assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
-  <script src="{{ asset('home_assets/vendor/php-email-form/validate.js') }}"></script>
   <!-- Template Main JS File -->
   <script src="{{ asset('home_assets/js/main.js') }}"></script>
 

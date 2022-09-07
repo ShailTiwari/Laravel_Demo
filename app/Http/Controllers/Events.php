@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\DB;
@@ -77,12 +78,36 @@ class Events extends Controller
 
 
 
-      public function create(Request $request)
+      public function holiday()
     {
         $page_name='Holidays';
-        $list = DB::select('SELECT * from holidays where isactive=1 and isdelete=0 and inuse=1');
-        //return $list;
+        $list = DB::table('holidays')
+                         ->where('isactive', '=', 1)
+                         ->where('isdelete', '=', 0)
+                         ->simplePaginate(10);
         return view('holiday',['page_name'=>$page_name,'holidays'=>$list]);
     }
 
+     public function save_holiday(Request $request)
+     {  
+         $insData = array(
+                            'start' => $request->start,
+                            'title' => $request->title,
+                            'description' =>$request->description,
+                            'isactive' =>1,
+                        );
+            $userlogs = array(
+                            'action_id' =>1,
+                            'module_id' =>1,
+                            'title' =>'Holiday Created',
+                            'description' =>'New Holiday Created',
+                            'isactive' =>1,
+                            'created_by' =>Auth::user()->id,
+                        );
+            DB::table('userlogs')->insert($userlogs);
+
+         DB::table('holidays')->insert($insData);
+        return redirect('holiday'); 
+
+     }
 }

@@ -97,8 +97,9 @@ var calendar = $('#calendar').fullCalendar({
                                     type: 'add'
                                 },
                                 type: "POST",
-                                success: function (data) {
-                                    displayMessage("Event Created Successfully");
+                                success: function (data) 
+                                   {
+                                    alert("Event Created Successfully");
                                     calendar.fullCalendar('renderEvent',
                                         {
                                             id: data.id,

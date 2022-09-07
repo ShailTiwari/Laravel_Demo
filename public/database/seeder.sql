@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2022 at 03:15 PM
+-- Generation Time: Sep 07, 2022 at 02:13 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -61,8 +61,8 @@ CREATE TABLE `activities` (
 INSERT INTO `activities` (`id`, `project`, `type`, `taskstatus`, `order`, `summary`, `description`, `assignee`, `reporter`, `flagged`, `labels`, `start`, `options`, `key`, `icon_picture`, `isconfirm`, `remarks`, `isactive`, `isdelete`, `inuse`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 (1, 3, 2, 4, 2, 'Blanditiis et possimus.', 'Rem harum optio eveniet ullam eum eos autem molestiae facere.', 1, 29, 5, 2, '2018-07-22', 2, 'Ipsam et.', 'no_image.png', 1, 'Sequi veritatis odit accusantium alias autem.', 1, 0, 1, 1, 1, NULL, NULL),
 (2, 3, 1, 3, 1, 'Beatae quaerat officia.', 'Aut eos ut aspernatur asperiores facilis voluptate quas.', 83, 91, 5, 4, '2021-03-25', 1, 'Et consequatur.', 'no_image.png', 1, 'In officia cupiditate veritatis ducimus deserunt et sapiente.', 1, 0, 1, 1, 1, NULL, NULL),
-(3, 1, 2, 3, 4, 'Tempore architecto.', 'Quo et illo enim consequatur doloremque placeat quasi iste ducimus explicabo.', 85, 15, 1, 3, '2001-08-26', 4, 'Maiores occaecati.', 'no_image.png', 1, 'Non laborum et et distinctio a autem.', 1, 0, 1, 1, 1, NULL, NULL),
-(4, 1, 5, 2, 4, 'Sit atque error dolores voluptatem.', 'Iure nemo eius pariatur possimus exercitationem quo fugiat placeat repellendus consequuntur beatae sed.', 20, 86, 3, 4, '1979-09-24', 2, 'Nesciunt.', 'no_image.png', 1, 'Voluptas ratione ullam inventore rerum earum laborum est.', 1, 0, 1, 1, 1, NULL, NULL),
+(3, 1, 2, 3, 3, 'Tempore architecto.', 'Quo et illo enim consequatur doloremque placeat quasi iste ducimus explicabo.', 85, 15, 1, 3, '2001-08-26', 4, 'Maiores occaecati.', 'no_image.png', 1, 'Non laborum et et distinctio a autem.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:40'),
+(4, 1, 5, 2, 5, 'Sit atque error dolores voluptatem.', 'Iure nemo eius pariatur possimus exercitationem quo fugiat placeat repellendus consequuntur beatae sed.', 20, 86, 3, 4, '1979-09-24', 2, 'Nesciunt.', 'no_image.png', 1, 'Voluptas ratione ullam inventore rerum earum laborum est.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:41'),
 (5, 3, 3, 2, 3, 'Accusantium sit est.', 'Aut velit et beatae eos qui molestias.', 15, 70, 3, 1, '2011-05-04', 2, 'Dolore ipsum.', 'no_image.png', 1, 'Aperiam eum facilis ipsa vel nostrum.', 1, 0, 1, 1, 1, NULL, NULL),
 (6, 5, 5, 5, 5, 'Incidunt reiciendis.', 'Deserunt placeat sed culpa eaque voluptas laudantium aut amet.', 64, 6, 5, 4, '1988-08-20', 1, 'Optio illum.', 'no_image.png', 1, 'Reprehenderit qui et et est quibusdam aut.', 1, 0, 1, 1, 1, NULL, NULL),
 (7, 2, 5, 2, 1, 'Maiores sint qui et commodi.', 'Consequatur et aut molestiae et sed quod eos doloribus vero quia mollitia rerum expedita.', 10, 39, 2, 4, '1990-06-28', 4, 'Pariatur laudantium.', 'no_image.png', 1, 'Nemo error aut voluptatem eligendi rerum asperiores sit ab.', 1, 0, 1, 1, 1, NULL, NULL),
@@ -72,7 +72,7 @@ INSERT INTO `activities` (`id`, `project`, `type`, `taskstatus`, `order`, `summa
 (11, 5, 2, 3, 3, 'Repellat beatae sapiente aspernatur.', 'Id mollitia nostrum rerum in eos odio consequatur nulla rem.', 42, 24, 2, 3, '2019-09-18', 1, 'Rerum.', 'no_image.png', 1, 'Voluptatem qui maiores vitae vitae.', 1, 0, 1, 1, 1, NULL, NULL),
 (12, 2, 1, 5, 1, 'Doloribus necessitatibus earum aut.', 'Doloremque excepturi alias ipsa perspiciatis est dolores aut et sunt assumenda vel omnis optio.', 43, 95, 3, 4, '1998-03-27', 3, 'Quae.', 'no_image.png', 1, 'Voluptate architecto facere et aspernatur distinctio occaecati.', 1, 0, 1, 1, 1, NULL, NULL),
 (13, 5, 5, 3, 1, 'Cupiditate ea qui dolor.', 'Eaque iure enim impedit vel debitis officiis assumenda aut numquam facere.', 100, 92, 2, 1, '1998-09-21', 5, 'Unde quis.', 'no_image.png', 1, 'Repellendus minus corrupti molestiae placeat consequatur.', 1, 0, 1, 1, 1, NULL, NULL),
-(14, 1, 1, 1, 1, 'Officiis corporis sunt.', 'Non nesciunt ipsam quos veritatis rerum ea molestiae deleniti ut.', 47, 86, 4, 3, '2006-06-03', 5, 'Incidunt pariatur.', 'no_image.png', 1, 'Dicta harum iusto sint nam id quia quibusdam.', 1, 0, 1, 1, 1, NULL, NULL),
+(14, 1, 1, 2, 2, 'Officiis corporis sunt.', 'Non nesciunt ipsam quos veritatis rerum ea molestiae deleniti ut.', 47, 86, 4, 3, '2006-06-03', 5, 'Incidunt pariatur.', 'no_image.png', 1, 'Dicta harum iusto sint nam id quia quibusdam.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:41'),
 (15, 1, 5, 4, 1, 'Laborum nobis eveniet sint.', 'Porro voluptates sint incidunt doloremque molestiae dolores vel dolorem cum sed inventore impedit quidem.', 19, 95, 1, 5, '2014-07-25', 4, 'Aliquid.', 'no_image.png', 1, 'Tenetur quo laborum sint soluta quis fugiat magni.', 1, 0, 1, 1, 1, NULL, NULL),
 (16, 3, 4, 3, 3, 'Quisquam necessitatibus earum et.', 'Pariatur culpa omnis omnis ipsam ea esse voluptate harum perferendis delectus aut dolor.', 52, 55, 2, 4, '2007-01-07', 5, 'Voluptatem architecto.', 'no_image.png', 1, 'Numquam sed aliquam est architecto.', 1, 0, 1, 1, 1, NULL, NULL),
 (17, 5, 2, 3, 1, 'Et expedita unde.', 'Et laborum sit commodi aut aut facilis voluptates magnam voluptatibus.', 8, 4, 3, 5, '1989-09-18', 5, 'Voluptatem sed.', 'no_image.png', 1, 'Et repellat itaque facilis qui et ratione dolor.', 1, 0, 1, 1, 1, NULL, NULL),
@@ -80,7 +80,7 @@ INSERT INTO `activities` (`id`, `project`, `type`, `taskstatus`, `order`, `summa
 (19, 2, 4, 3, 2, 'Et voluptas consequatur.', 'Eaque tenetur illo nisi occaecati expedita libero et sit qui quia maxime vero sit.', 42, 41, 1, 5, '2015-05-21', 4, 'Labore at.', 'no_image.png', 1, 'Nesciunt praesentium non qui eligendi delectus magni aut.', 1, 0, 1, 1, 1, NULL, NULL),
 (20, 1, 2, 4, 5, 'Consequatur dolorem rerum aut ut.', 'Temporibus quas et aut voluptatem sed dolorem odio.', 62, 20, 4, 2, '1979-01-29', 5, 'Earum.', 'no_image.png', 1, 'Molestiae et est id.', 1, 0, 1, 1, 1, NULL, NULL),
 (21, 5, 3, 3, 2, 'Sint ad sint eum.', 'Nemo est nihil quis consectetur unde ut maiores quis.', 53, 93, 2, 4, '2004-10-13', 3, 'Qui sit.', 'no_image.png', 1, 'Voluptatibus accusamus eos aut animi consequatur.', 1, 0, 1, 1, 1, NULL, NULL),
-(22, 1, 5, 1, 5, 'Tempore velit facilis culpa.', 'Nobis velit porro sequi natus molestiae nihil.', 32, 26, 1, 1, '1981-12-31', 4, 'Aut.', 'no_image.png', 1, 'Est aut aut occaecati culpa.', 1, 0, 1, 1, 1, NULL, NULL),
+(22, 1, 5, 1, 2, 'Tempore velit facilis culpa.', 'Nobis velit porro sequi natus molestiae nihil.', 32, 26, 1, 1, '1981-12-31', 4, 'Aut.', 'no_image.png', 1, 'Est aut aut occaecati culpa.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:41'),
 (23, 4, 2, 3, 5, 'A illo explicabo voluptatem accusantium.', 'Aspernatur est sunt cupiditate nihil sequi quia itaque commodi voluptatum et libero recusandae temporibus.', 9, 42, 1, 3, '2006-04-01', 1, 'Perspiciatis.', 'no_image.png', 1, 'Consequuntur sunt sint quia excepturi est enim.', 1, 0, 1, 1, 1, NULL, NULL),
 (24, 2, 2, 3, 4, 'Eaque quis accusamus.', 'Iure aut inventore voluptatem eos qui tempora consequuntur id ut quia aut unde ut.', 4, 9, 5, 2, '1992-01-20', 4, 'Enim commodi.', 'no_image.png', 1, 'Recusandae possimus ullam consequatur quo iste quae similique.', 1, 0, 1, 1, 1, NULL, NULL),
 (25, 4, 1, 4, 1, 'Non dignissimos repudiandae.', 'Earum sint quia et asperiores velit ut.', 11, 57, 5, 3, '1982-02-10', 5, 'Optio itaque.', 'no_image.png', 1, 'Impedit occaecati et consectetur ullam dolor.', 1, 0, 1, 1, 1, NULL, NULL),
@@ -89,10 +89,10 @@ INSERT INTO `activities` (`id`, `project`, `type`, `taskstatus`, `order`, `summa
 (28, 5, 4, 3, 1, 'Laborum rerum dolores.', 'Molestiae ut accusamus rerum autem incidunt nulla accusantium repellendus consequatur.', 8, 34, 5, 2, '1996-08-08', 2, 'Aut incidunt.', 'no_image.png', 1, 'Exercitationem minus nihil sunt error dignissimos placeat omnis.', 1, 0, 1, 1, 1, NULL, NULL),
 (29, 5, 4, 2, 3, 'Quisquam deserunt iure.', 'Dolore temporibus commodi voluptas quam magnam iure.', 63, 54, 2, 3, '1984-01-24', 3, 'Quis.', 'no_image.png', 1, 'Ut non dolorum explicabo nisi.', 1, 0, 1, 1, 1, NULL, NULL),
 (30, 3, 2, 3, 3, 'Itaque aspernatur eius.', 'Reiciendis tenetur vitae laboriosam sapiente et ea.', 21, 9, 4, 1, '2021-09-23', 3, 'Quis.', 'no_image.png', 1, 'Sunt doloremque vel explicabo quibusdam sint.', 1, 0, 1, 1, 1, NULL, NULL),
-(31, 1, 4, 3, 1, 'Magni dolorum dolorem et.', 'Repudiandae est id earum culpa nulla eius possimus quos.', 98, 5, 5, 3, '1997-08-17', 5, 'Atque.', 'no_image.png', 1, 'Quo aut molestiae a.', 1, 0, 1, 1, 1, NULL, NULL),
+(31, 1, 4, 2, 1, 'Magni dolorum dolorem et.', 'Repudiandae est id earum culpa nulla eius possimus quos.', 98, 5, 5, 3, '1997-08-17', 5, 'Atque.', 'no_image.png', 1, 'Quo aut molestiae a.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:41'),
 (32, 5, 1, 3, 3, 'Eaque iste perspiciatis est.', 'Repellat necessitatibus rerum voluptatem impedit quas quas et quia.', 93, 51, 2, 1, '1977-09-30', 1, 'Voluptatibus.', 'no_image.png', 1, 'Ipsam aut possimus quidem qui debitis quia.', 1, 0, 1, 1, 1, NULL, NULL),
 (33, 2, 3, 2, 5, 'Enim cupiditate sequi minus.', 'Perspiciatis omnis eos eveniet quis quo rerum accusantium ad nihil fugiat ut.', 96, 12, 5, 4, '2001-03-18', 4, 'Voluptatem alias.', 'no_image.png', 1, 'Sed officiis ratione et quo unde.', 1, 0, 1, 1, 1, NULL, NULL),
-(34, 1, 2, 2, 5, 'Id fuga amet.', 'Excepturi provident commodi ut doloremque velit tenetur.', 49, 26, 4, 4, '2012-04-03', 4, 'Dolorem.', 'no_image.png', 1, 'Velit iusto rem autem fugiat.', 1, 0, 1, 1, 1, NULL, NULL),
+(34, 1, 2, 2, 6, 'Id fuga amet.', 'Excepturi provident commodi ut doloremque velit tenetur.', 49, 26, 4, 4, '2012-04-03', 4, 'Dolorem.', 'no_image.png', 1, 'Velit iusto rem autem fugiat.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:41'),
 (35, 4, 2, 3, 1, 'Reiciendis et necessitatibus eligendi.', 'Quasi ut consequatur eum praesentium aut fugit eos vel mollitia sed dolor odit.', 49, 61, 2, 1, '2021-04-14', 5, 'Ex.', 'no_image.png', 1, 'Deserunt vel corporis consequatur et aut ad sit sint.', 1, 0, 1, 1, 1, NULL, NULL),
 (36, 5, 2, 5, 3, 'Est non.', 'Architecto quis nihil ex laborum neque voluptatem quis incidunt quas eaque amet quaerat dolores.', 32, 37, 1, 1, '1978-04-26', 4, 'Illo incidunt.', 'no_image.png', 1, 'Sit magnam ut vitae modi.', 1, 0, 1, 1, 1, NULL, NULL),
 (37, 2, 4, 1, 1, 'Est aspernatur cumque repudiandae.', 'Libero temporibus molestiae a non et nisi officia.', 31, 42, 1, 2, '2018-10-02', 4, 'Voluptates.', 'no_image.png', 1, 'Exercitationem temporibus rem et quo praesentium eos.', 1, 0, 1, 1, 1, NULL, NULL),
@@ -104,11 +104,11 @@ INSERT INTO `activities` (`id`, `project`, `type`, `taskstatus`, `order`, `summa
 (43, 4, 4, 2, 3, 'Voluptas error ratione.', 'In vel saepe pariatur qui iusto culpa voluptatibus error.', 48, 11, 5, 2, '2005-05-17', 3, 'Totam unde.', 'no_image.png', 1, 'Ipsa provident corporis perspiciatis tempora.', 1, 0, 1, 1, 1, NULL, NULL),
 (44, 4, 1, 5, 5, 'Porro reiciendis ut.', 'Iste similique et ducimus quia dolorum enim commodi consequatur sint dignissimos sit.', 31, 2, 1, 1, '2018-05-23', 5, 'Qui.', 'no_image.png', 1, 'Esse deleniti ea placeat voluptas ad consectetur.', 1, 0, 1, 1, 1, NULL, NULL),
 (45, 4, 3, 4, 3, 'Et similique non earum.', 'Et sed id maxime consequatur ad suscipit.', 81, 36, 3, 1, '1973-05-19', 5, 'Nostrum.', 'no_image.png', 1, 'Molestias doloribus possimus ab et dolorum.', 1, 0, 1, 1, 1, NULL, NULL),
-(46, 1, 2, 2, 5, 'Cumque debitis nostrum fugiat.', 'Ea blanditiis est nisi corrupti impedit amet corrupti repellendus quibusdam consequatur.', 76, 24, 4, 2, '2005-11-09', 2, 'Numquam consequuntur.', 'no_image.png', 1, 'Laborum ut enim et expedita alias.', 1, 0, 1, 1, 1, NULL, NULL),
+(46, 1, 2, 2, 7, 'Cumque debitis nostrum fugiat.', 'Ea blanditiis est nisi corrupti impedit amet corrupti repellendus quibusdam consequatur.', 76, 24, 4, 2, '2005-11-09', 2, 'Numquam consequuntur.', 'no_image.png', 1, 'Laborum ut enim et expedita alias.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:41'),
 (47, 3, 2, 4, 3, 'Non atque dicta maxime sapiente.', 'Optio minima totam deserunt sit doloremque odio hic odit pariatur accusantium.', 50, 60, 3, 4, '2008-10-29', 3, 'Rerum unde.', 'no_image.png', 1, 'Repellat dolorem consequuntur illo deserunt tempora libero.', 1, 0, 1, 1, 1, NULL, NULL),
 (48, 1, 1, 5, 2, 'Veritatis repellat.', 'Molestias et a neque corrupti ratione omnis in consequatur odit mollitia ut ea reprehenderit.', 17, 26, 2, 4, '1999-07-04', 2, 'Et vitae.', 'no_image.png', 1, 'Vel animi maxime praesentium nam necessitatibus officia facilis.', 1, 0, 1, 1, 1, NULL, NULL),
 (49, 2, 5, 2, 5, 'Autem ipsum ipsam.', 'Quis ipsum minima placeat sunt quos ut nobis.', 84, 7, 4, 2, '2015-11-26', 5, 'Placeat et.', 'no_image.png', 1, 'Quia non quidem sunt voluptas.', 1, 0, 1, 1, 1, NULL, NULL),
-(50, 1, 1, 1, 3, 'Non qui.', 'Quia consectetur vitae dolores laboriosam optio dicta commodi odit rerum.', 68, 85, 3, 3, '2014-07-06', 5, 'Doloribus illo.', 'no_image.png', 1, 'Aspernatur quam eaque exercitationem minus.', 1, 0, 1, 1, 1, NULL, NULL),
+(50, 1, 1, 1, 0, 'Non qui.', 'Quia consectetur vitae dolores laboriosam optio dicta commodi odit rerum.', 68, 85, 3, 3, '2014-07-06', 5, 'Doloribus illo.', 'no_image.png', 1, 'Aspernatur quam eaque exercitationem minus.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:41'),
 (51, 5, 3, 2, 5, 'Saepe incidunt alias in.', 'Nihil impedit ipsum molestiae dicta voluptates sequi voluptatem.', 12, 43, 1, 5, '2021-12-31', 1, 'Nihil.', 'no_image.png', 1, 'Adipisci expedita et veritatis incidunt doloribus sit rem sint.', 1, 0, 1, 1, 1, NULL, NULL),
 (52, 2, 1, 1, 5, 'Voluptatum minus ipsa.', 'Et saepe impedit dicta ex odio sit.', 89, 86, 3, 3, '1977-11-01', 4, 'Provident.', 'no_image.png', 1, 'Natus voluptates et ut et iure voluptatum tempore.', 1, 0, 1, 1, 1, NULL, NULL),
 (53, 4, 1, 2, 4, 'Laborum iusto.', 'Dolor veritatis beatae necessitatibus eos voluptatem inventore consequatur.', 28, 61, 1, 3, '1972-04-04', 1, 'Sed.', 'no_image.png', 1, 'Molestiae cupiditate nihil asperiores illo ut ut cupiditate voluptates.', 1, 0, 1, 1, 1, NULL, NULL),
@@ -116,32 +116,32 @@ INSERT INTO `activities` (`id`, `project`, `type`, `taskstatus`, `order`, `summa
 (55, 5, 1, 1, 3, 'Ad harum natus.', 'Ducimus quia et nobis nulla eius magni dolore dolorem sit voluptas.', 8, 54, 1, 1, '1971-05-10', 2, 'Culpa illum.', 'no_image.png', 1, 'Praesentium perspiciatis et et officiis asperiores assumenda.', 1, 0, 1, 1, 1, NULL, NULL),
 (56, 5, 4, 5, 5, 'Numquam voluptatum ipsam accusantium.', 'Nulla in quia vel molestiae inventore aperiam doloribus cum nostrum minus.', 54, 34, 2, 5, '1975-07-16', 4, 'Sint.', 'no_image.png', 1, 'Modi aut doloribus deserunt facere labore blanditiis.', 1, 0, 1, 1, 1, NULL, NULL),
 (57, 2, 5, 3, 4, 'Repellendus recusandae dolorem est.', 'Ad nesciunt quaerat voluptatem vel a incidunt a.', 5, 66, 2, 4, '2005-01-07', 1, 'Qui.', 'no_image.png', 1, 'Similique esse mollitia ut reprehenderit eaque veniam.', 1, 0, 1, 1, 1, NULL, NULL),
-(58, 1, 5, 3, 5, 'Officia quo saepe et.', 'Ut magni quas autem sit quis sit laboriosam sunt sit.', 19, 9, 4, 5, '1974-10-10', 1, 'Incidunt.', 'no_image.png', 1, 'Cumque voluptate et consectetur repellendus cumque animi et.', 1, 0, 1, 1, 1, NULL, NULL),
+(58, 1, 5, 3, 4, 'Officia quo saepe et.', 'Ut magni quas autem sit quis sit laboriosam sunt sit.', 19, 9, 4, 5, '1974-10-10', 1, 'Incidunt.', 'no_image.png', 1, 'Cumque voluptate et consectetur repellendus cumque animi et.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:40'),
 (59, 5, 4, 3, 3, 'Est animi.', 'Qui sunt harum asperiores ad aliquam voluptatem.', 38, 43, 1, 3, '1990-08-04', 1, 'Temporibus.', 'no_image.png', 1, 'A consequuntur provident aut molestiae voluptas consequuntur quisquam.', 1, 0, 1, 1, 1, NULL, NULL),
 (60, 2, 4, 5, 2, 'Eius vel suscipit.', 'Nulla cumque necessitatibus doloremque et sed delectus possimus adipisci voluptate.', 72, 78, 2, 2, '1984-02-07', 2, 'Natus.', 'no_image.png', 1, 'Voluptatem inventore at quis assumenda et libero quia delectus.', 1, 0, 1, 1, 1, NULL, NULL),
-(61, 1, 4, 3, 1, 'Officia sint quo doloribus.', 'Reprehenderit cumque sequi commodi ut aliquam id.', 86, 56, 3, 3, '2002-09-23', 3, 'Odio.', 'no_image.png', 1, 'Id omnis asperiores et sint incidunt non.', 1, 0, 1, 1, 1, NULL, NULL),
-(62, 1, 3, 2, 2, 'Aspernatur voluptatibus magni.', 'Sit optio perspiciatis veritatis voluptatem eaque libero nihil dicta corporis dolores atque quo.', 8, 89, 1, 2, '1970-12-28', 3, 'Voluptas.', 'no_image.png', 1, 'Quas eos ipsam soluta esse explicabo amet tempora.', 1, 0, 1, 1, 1, NULL, NULL),
+(61, 1, 4, 3, 1, 'Officia sint quo doloribus.', 'Reprehenderit cumque sequi commodi ut aliquam id.', 86, 56, 3, 3, '2002-09-23', 3, 'Odio.', 'no_image.png', 1, 'Id omnis asperiores et sint incidunt non.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:42'),
+(62, 1, 3, 2, 3, 'Aspernatur voluptatibus magni.', 'Sit optio perspiciatis veritatis voluptatem eaque libero nihil dicta corporis dolores atque quo.', 8, 89, 1, 2, '1970-12-28', 3, 'Voluptas.', 'no_image.png', 1, 'Quas eos ipsam soluta esse explicabo amet tempora.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:41'),
 (63, 3, 1, 5, 4, 'Quod voluptatem in delectus.', 'Quaerat ullam rerum ab sit fugiat quaerat.', 39, 79, 4, 1, '2002-07-24', 3, 'Nemo.', 'no_image.png', 1, 'Laudantium hic modi blanditiis.', 1, 0, 1, 1, 1, NULL, NULL),
 (64, 2, 2, 4, 3, 'Itaque provident facere optio.', 'Vel tempore repellendus distinctio qui quos architecto itaque quis inventore molestiae adipisci nulla incidunt.', 24, 83, 5, 5, '1985-03-02', 4, 'Enim.', 'no_image.png', 1, 'Omnis tenetur sed hic consequatur porro quibusdam qui sit.', 1, 0, 1, 1, 1, NULL, NULL),
 (65, 2, 1, 3, 1, 'Perspiciatis odio.', 'Animi laudantium maxime in quae aliquid ut.', 63, 27, 3, 2, '1973-09-22', 3, 'Quia.', 'no_image.png', 1, 'Dolor cumque ut eos eos ad beatae.', 1, 0, 1, 1, 1, NULL, NULL),
-(66, 1, 1, 1, 1, 'Voluptatem harum.', 'Dolorem unde enim qui voluptates ut suscipit quo et.', 5, 3, 5, 2, '1975-11-07', 4, 'Cumque.', 'no_image.png', 1, 'Ea omnis quis excepturi maxime error unde.', 1, 0, 1, 1, 1, NULL, NULL),
+(66, 1, 1, 2, 0, 'Voluptatem harum.', 'Dolorem unde enim qui voluptates ut suscipit quo et.', 5, 3, 5, 2, '1975-11-07', 4, 'Cumque.', 'no_image.png', 1, 'Ea omnis quis excepturi maxime error unde.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:41'),
 (67, 1, 3, 4, 4, 'Optio tenetur sit non.', 'Qui assumenda nobis labore nemo maiores vero vero voluptatibus necessitatibus et.', 42, 88, 2, 2, '2000-12-03', 4, 'Nihil.', 'no_image.png', 1, 'Maxime nulla sit saepe et molestiae nobis voluptate.', 1, 0, 1, 1, 1, NULL, NULL),
 (68, 2, 1, 4, 5, 'Tenetur debitis et aperiam.', 'Voluptatibus tempora ut ut non sint exercitationem harum.', 29, 66, 3, 5, '2021-04-28', 5, 'Ipsum nemo.', 'no_image.png', 1, 'Qui sit aut autem possimus est minus suscipit.', 1, 0, 1, 1, 1, NULL, NULL),
 (69, 4, 2, 3, 3, 'Vitae eum.', 'Iste nam deleniti cum fugiat autem et cum eum et.', 84, 100, 5, 5, '2013-04-01', 2, 'Nihil.', 'no_image.png', 1, 'Quibusdam quod qui qui omnis natus dolorem deserunt ducimus.', 1, 0, 1, 1, 1, NULL, NULL),
 (70, 4, 5, 1, 1, 'Voluptas aliquam at animi.', 'Reprehenderit qui inventore sequi delectus occaecati vel quos cupiditate quo qui.', 74, 3, 5, 2, '1992-04-17', 3, 'Esse.', 'no_image.png', 1, 'Quaerat excepturi repudiandae aut eius inventore voluptas nesciunt.', 1, 0, 1, 1, 1, NULL, NULL),
 (71, 2, 5, 2, 2, 'Debitis perspiciatis delectus.', 'Nihil accusantium aliquam modi omnis dolorem minima occaecati eum esse.', 71, 3, 2, 5, '1983-05-11', 4, 'Labore nesciunt.', 'no_image.png', 1, 'Quos commodi non sunt.', 1, 0, 1, 1, 1, NULL, NULL),
-(72, 1, 3, 1, 4, 'Maiores tempore dolor deserunt.', 'Vitae et consequuntur delectus sed voluptatem libero velit aut quasi non nam omnis mollitia.', 49, 57, 3, 1, '1981-10-13', 1, 'Voluptatem.', 'no_image.png', 1, 'Sapiente commodi ex qui molestiae deserunt quia.', 1, 0, 1, 1, 1, NULL, NULL),
+(72, 1, 3, 1, 1, 'Maiores tempore dolor deserunt.', 'Vitae et consequuntur delectus sed voluptatem libero velit aut quasi non nam omnis mollitia.', 49, 57, 3, 1, '1981-10-13', 1, 'Voluptatem.', 'no_image.png', 1, 'Sapiente commodi ex qui molestiae deserunt quia.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:41'),
 (73, 3, 5, 1, 5, 'Dolore ratione sint.', 'Consequatur officiis sequi et mollitia et quisquam sint nesciunt repellat repellat quas optio saepe.', 48, 36, 1, 2, '2022-07-05', 5, 'Sunt.', 'no_image.png', 1, 'Quas aliquid ullam excepturi praesentium id maxime necessitatibus.', 1, 0, 1, 1, 1, NULL, NULL),
 (74, 5, 3, 4, 1, 'Ipsam sapiente reiciendis iusto in.', 'Minima ut fuga voluptatem nihil quos non ut dolorem iure quo mollitia.', 11, 21, 1, 3, '1991-08-05', 3, 'Deserunt eum.', 'no_image.png', 1, 'Occaecati sed voluptate architecto fugiat.', 1, 0, 1, 1, 1, NULL, NULL),
-(75, 1, 5, 3, 2, 'Qui optio et nihil.', 'Voluptatem consequuntur fugit quidem ratione eaque voluptates est odio enim aut non.', 97, 94, 5, 2, '2004-12-26', 5, 'Inventore animi.', 'no_image.png', 1, 'Eum soluta ea veniam et omnis commodi.', 1, 0, 1, 1, 1, NULL, NULL),
+(75, 1, 5, 3, 0, 'Qui optio et nihil.', 'Voluptatem consequuntur fugit quidem ratione eaque voluptates est odio enim aut non.', 97, 94, 5, 2, '2004-12-26', 5, 'Inventore animi.', 'no_image.png', 1, 'Eum soluta ea veniam et omnis commodi.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:42'),
 (76, 2, 2, 5, 2, 'Rem perspiciatis quos possimus.', 'Cupiditate reprehenderit ad tempore occaecati non optio ut.', 66, 7, 1, 2, '1981-08-07', 3, 'Est.', 'no_image.png', 1, 'Quasi nihil voluptatem sed quam tempore.', 1, 0, 1, 1, 1, NULL, NULL),
 (77, 2, 2, 3, 1, 'Sed cumque alias.', 'Atque ea amet fuga laudantium officia harum ab commodi doloremque quae vel.', 27, 86, 4, 3, '2013-09-26', 4, 'Molestiae.', 'no_image.png', 1, 'Sit reiciendis omnis reiciendis quasi voluptatem impedit necessitatibus.', 1, 0, 1, 1, 1, NULL, NULL),
-(78, 1, 1, 2, 2, 'Earum vitae quia deleniti.', 'Provident eius laudantium quo a inventore rem nihil.', 36, 67, 3, 5, '2010-05-13', 2, 'Sint.', 'no_image.png', 1, 'Perferendis est omnis libero repellat aut possimus laboriosam.', 1, 0, 1, 1, 1, NULL, NULL),
+(78, 1, 1, 2, 4, 'Earum vitae quia deleniti.', 'Provident eius laudantium quo a inventore rem nihil.', 36, 67, 3, 5, '2010-05-13', 2, 'Sint.', 'no_image.png', 1, 'Perferendis est omnis libero repellat aut possimus laboriosam.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:41'),
 (79, 3, 1, 1, 2, 'Qui et eaque.', 'Ad rerum repellendus ex explicabo voluptatibus impedit consectetur nesciunt et neque voluptates.', 14, 33, 4, 2, '2003-02-20', 3, 'Culpa accusamus.', 'no_image.png', 1, 'Distinctio modi porro autem.', 1, 0, 1, 1, 1, NULL, NULL),
 (80, 3, 4, 5, 4, 'Neque eius aut numquam ipsam.', 'Qui quisquam veritatis nobis ratione id debitis quidem inventore minus.', 97, 98, 3, 3, '2002-03-17', 1, 'Sunt.', 'no_image.png', 1, 'Autem sed sit quo voluptate.', 1, 0, 1, 1, 1, NULL, NULL),
 (81, 2, 2, 3, 1, 'Saepe omnis quia.', 'Quo delectus commodi sed est voluptas molestiae quia voluptates.', 1, 67, 2, 5, '1972-11-10', 5, 'Officiis at.', 'no_image.png', 1, 'Rem impedit et blanditiis deleniti qui perspiciatis sint.', 1, 0, 1, 1, 1, NULL, NULL),
 (82, 3, 3, 5, 4, 'Numquam possimus laboriosam.', 'Incidunt eos nostrum cumque rerum quas est.', 36, 83, 5, 5, '1970-05-04', 1, 'Quasi occaecati.', 'no_image.png', 1, 'Assumenda repellendus veniam facilis dolores quas.', 1, 0, 1, 1, 1, NULL, NULL),
-(83, 1, 5, 3, 2, 'Dolores quaerat mollitia.', 'Itaque sunt reiciendis soluta est maiores sunt ipsam accusantium necessitatibus impedit corporis quibusdam atque.', 49, 55, 1, 5, '1977-07-04', 2, 'Et enim.', 'no_image.png', 1, 'Ut quia iste quas officiis.', 1, 0, 1, 1, 1, NULL, NULL),
+(83, 1, 5, 3, 2, 'Dolores quaerat mollitia.', 'Itaque sunt reiciendis soluta est maiores sunt ipsam accusantium necessitatibus impedit corporis quibusdam atque.', 49, 55, 1, 5, '1977-07-04', 2, 'Et enim.', 'no_image.png', 1, 'Ut quia iste quas officiis.', 1, 0, 1, 1, 1, NULL, '2022-09-07 05:54:40'),
 (84, 2, 5, 2, 4, 'Deserunt aliquid dolorem.', 'Corporis aut dolor et natus recusandae eius ab ut tempore ut minima.', 10, 59, 1, 2, '1993-04-04', 5, 'Modi ut.', 'no_image.png', 1, 'Vero voluptatibus excepturi et et.', 1, 0, 1, 1, 1, NULL, NULL),
 (85, 4, 3, 5, 3, 'Architecto consequuntur consequatur.', 'Consequuntur maiores nulla id laboriosam quisquam quia vel.', 77, 34, 4, 1, '1993-03-18', 1, 'Dolorem incidunt.', 'no_image.png', 1, 'Cupiditate eveniet aliquid aspernatur iusto omnis ut.', 1, 0, 1, 1, 1, NULL, NULL),
 (86, 1, 3, 4, 2, 'Rerum ipsa est.', 'Qui quia eius sit et optio omnis quod aut incidunt et velit voluptas blanditiis.', 31, 85, 1, 2, '1980-09-29', 3, 'Consequatur ea.', 'no_image.png', 1, 'Incidunt nesciunt nostrum recusandae quia.', 1, 0, 1, 1, 1, NULL, NULL),
@@ -370,6 +370,51 @@ CREATE TABLE `connected_accounts` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `isactive` int(11) NOT NULL DEFAULT 1,
+  `isdelete` int(11) NOT NULL DEFAULT 0,
+  `inuse` int(11) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `name`, `email`, `subject`, `message`, `isactive`, `isdelete`, `inuse`, `created_at`, `updated_at`) VALUES
+(1, 'Satendra', 's@gmail.com', 'aa', 'test', 1, 0, 1, '2022-09-07 02:14:15', '2022-09-07 02:14:15'),
+(2, 'Satendraacffs', 'sss@gmail.com', 'aa', 'test', 1, 0, 1, '2022-09-07 02:15:45', '2022-09-07 02:15:45'),
+(3, 'Satendraacffs', 'sss@gmail.com', 'aa', 'test', 1, 0, 1, '2022-09-07 02:17:08', '2022-09-07 02:17:08'),
+(4, 'Admin', 'shailendrat@alohatechnologydev.com', 'aa', 'Testing', 1, 0, 1, '2022-09-07 02:18:33', '2022-09-07 02:18:33'),
+(5, 'Admin', 'at@alohatechnologydev.com', 'aa', 'Testing', 1, 0, 1, '2022-09-07 02:30:08', '2022-09-07 02:30:08'),
+(6, 'Admin', 'at@alohatechnologydev.com', 'aa', 'Testing', 1, 0, 1, '2022-09-07 02:30:13', '2022-09-07 02:30:13'),
+(7, 'Admin', 'at@alohatechnologydev.com', 'aa', 'Testing', 1, 0, 1, '2022-09-07 02:50:27', '2022-09-07 02:50:27'),
+(8, 'Admin', 'at@alohatechnologydev.com', 'aa', 'Testing', 1, 0, 1, '2022-09-07 02:51:03', '2022-09-07 02:51:03'),
+(9, 'Admin', 'at@alohatechnologydev.com', 'aa', 'Testing', 1, 0, 1, '2022-09-07 02:51:30', '2022-09-07 02:51:30'),
+(10, 'Admin', 'at@alohatechnologydev.com', 'aa', 'Testing', 1, 0, 1, '2022-09-07 02:52:34', '2022-09-07 02:52:34'),
+(11, 'Shailendraa', 'at@alohatechnologydev.com', 'aa', 'eg', 1, 0, 1, '2022-09-07 04:28:22', '2022-09-07 04:28:22'),
+(12, 'Shailendraa', 'at@alohatechnologydev.com', 'aa', 'eg', 1, 0, 1, '2022-09-07 04:30:12', '2022-09-07 04:30:12'),
+(13, 'dqwr', 'qw@gm.v', 'qwfr', 'qwf', 1, 0, 1, '2022-09-07 04:31:57', '2022-09-07 04:31:57'),
+(14, 'Shail', 's@gmail.com', 's', 's', 1, 0, 1, '2022-09-07 04:34:34', '2022-09-07 04:34:34'),
+(15, 'sdfas', 's@gmail.com', 'ad', 'AD', 1, 0, 1, '2022-09-07 04:35:49', '2022-09-07 04:35:49'),
+(16, 'DFQWF', 'singhtiwari.shailendra@gmail.com', 'WQFQW', 'FWQ', 1, 0, 1, '2022-09-07 04:36:40', '2022-09-07 04:36:40'),
+(17, 'SZs', 'shailendrat@alohatechnologydev.com', 's', 'DAAD', 1, 0, 1, '2022-09-07 04:40:10', '2022-09-07 04:40:10'),
+(18, 'dawwq', 'shailendrat@alohatechnologydev.com', 's', 'WQD', 1, 0, 1, '2022-09-07 04:40:57', '2022-09-07 04:40:57'),
+(19, 'Admin', 'singhtiwari.shailendra@gmail.com', 'qwfr', 'QS', 1, 0, 1, '2022-09-07 04:43:28', '2022-09-07 04:43:28'),
+(20, 'Shail', 'at@alohatechnologydev.com', 'df', 'fwwe', 1, 0, 1, '2022-09-07 04:45:48', '2022-09-07 04:45:48');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customers`
 --
 
@@ -560,7 +605,15 @@ INSERT INTO `events` (`id`, `title`, `start`, `end`, `isactive`, `isdelete`, `cr
 (97, 'Ut temporibus eius nihil perspiciatis.', '2006-02-22', '2015-06-12', 1, 0, 1, 1, 1, NULL, NULL),
 (98, 'Et voluptatem est nostrum culpa.', '1981-03-13', '1985-05-03', 1, 0, 1, 1, 1, NULL, NULL),
 (99, 'Dolorem voluptatem ipsam.', '1973-06-04', '1976-01-05', 1, 0, 1, 1, 1, NULL, NULL),
-(100, 'Quaerat illum eveniet.', '1980-11-24', '2005-04-19', 1, 0, 1, 1, 1, NULL, NULL);
+(100, 'Quaerat illum eveniet.', '1980-11-24', '2005-04-19', 1, 0, 1, 1, 1, NULL, NULL),
+(101, '3tf4t', '2022-08-31', '2022-09-01', 1, 0, 1, 1, 1, '2022-09-07 05:55:15', '2022-09-07 05:55:15'),
+(102, 'awfwef', '2022-08-30', '2022-08-31', 1, 0, 1, 1, 1, '2022-09-07 05:55:20', '2022-09-07 05:55:20'),
+(103, 'regr', '2022-09-01', '2022-09-02', 1, 0, 1, 1, 1, '2022-09-07 05:58:16', '2022-09-07 05:58:16'),
+(104, 'dsfsdf', '2022-09-02', '2022-09-03', 1, 0, 1, 1, 1, '2022-09-07 05:58:26', '2022-09-07 05:58:26'),
+(105, 'wet32t', '2022-08-30', '2022-08-31', 1, 0, 1, 1, 1, '2022-09-07 05:58:46', '2022-09-07 05:58:46'),
+(106, 'wt23rt', '2022-08-31', '2022-09-01', 1, 0, 1, 1, 1, '2022-09-07 05:58:49', '2022-09-07 05:58:49'),
+(107, 'rtw2r23t', '2022-08-30', '2022-08-31', 1, 0, 1, 1, 1, '2022-09-07 05:58:54', '2022-09-07 05:58:54'),
+(108, 'r23r23rtf', '2022-08-30', '2022-08-31', 1, 0, 1, 1, 1, '2022-09-07 05:58:58', '2022-09-07 05:58:58');
 
 -- --------------------------------------------------------
 
@@ -642,7 +695,8 @@ INSERT INTO `holidays` (`id`, `title`, `description`, `start`, `isactive`, `isde
 (7, 'Possimus tempora eum consequatur.', 'Voluptatem asperiores quas explicabo vero voluptatibus omnis aut.', '1990-09-20', 1, 0, 1, 1, 1, NULL, NULL),
 (8, 'Vel velit.', 'Excepturi voluptas nesciunt itaque et ipsum ut aliquid sed doloremque labore dolor et.', '1973-08-06', 1, 0, 1, 1, 1, NULL, NULL),
 (9, 'Voluptate molestiae assumenda.', 'Eligendi natus reiciendis qui et quia architecto hic aut assumenda et maiores vel.', '1986-06-27', 1, 0, 1, 1, 1, NULL, NULL),
-(10, 'Voluptatibus repellat quos.', 'Voluptatem voluptatem corporis sit distinctio modi quia in fuga accusamus laudantium culpa.', '1974-02-18', 1, 0, 1, 1, 1, NULL, NULL);
+(10, 'Voluptatibus repellat quos.', 'Voluptatem voluptatem corporis sit distinctio modi quia in fuga accusamus laudantium culpa.', '1974-02-18', 1, 0, 1, 1, 1, NULL, NULL),
+(11, 'Welcome to Aloha', 'e2qe', '2022-09-08', 1, 0, 1, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -746,7 +800,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (23, '2022_08_26_063052_create_permission_tables', 1),
 (24, '2022_09_01_102612_create_userlogs_table', 1),
 (25, '2022_09_02_052239_create_banners_table', 1),
-(26, '2022_09_05_063529_create_banner_master_table', 1);
+(26, '2022_09_05_063529_create_banner_master_table', 1),
+(27, '2022_09_07_064629_create_contacts_table', 2);
 
 -- --------------------------------------------------------
 
@@ -771,6 +826,13 @@ CREATE TABLE `model_has_roles` (
   `model_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `model_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `model_has_roles`
+--
+
+INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
+(1, 'App\\Models\\User', 101);
 
 -- --------------------------------------------------------
 
@@ -859,7 +921,8 @@ INSERT INTO `posts` (`id`, `dept_id`, `title`, `description`, `isactive`, `isdel
 (2, 2, 'Personal Home Care Aide', 'Nihil voluptas nulla eos error aut beatae et sed placeat facilis omnis et.', 1, 0, 1, 1, 1, NULL, NULL),
 (3, 5, 'Air Crew Member', 'Distinctio voluptatem aut excepturi amet quo quis.', 1, 0, 1, 1, 1, NULL, NULL),
 (4, 4, 'Postal Service Mail Carrier', 'Unde ipsam non eos qui consequatur velit.', 1, 0, 1, 1, 1, NULL, NULL),
-(5, 1, 'Painter and Illustrator', 'Est sint consequatur sunt impedit minus qui quam impedit cupiditate impedit aut modi.', 1, 0, 1, 1, 1, NULL, NULL);
+(5, 1, 'Painter and Illustrator', 'Est sint consequatur sunt impedit minus qui quam impedit cupiditate impedit aut modi.', 1, 0, 1, 1, 1, NULL, NULL),
+(6, 3, 'Aloha', 'Welcome to Aloha', 1, 0, 1, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -967,6 +1030,20 @@ CREATE TABLE `role_has_permissions` (
   `role_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `role_has_permissions`
+--
+
+INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1),
+(6, 1),
+(7, 1),
+(8, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -987,7 +1064,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('7VrGUxc4W4NtTVPMQwfMLjwW80F6oDSKGiX04TxG', 101, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:104.0) Gecko/20100101 Firefox/104.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiZGxWTHlyRk5XTU5qTm0zOHR0YmJEbkgzejB1VzRReDY1R2hxQjlZeCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC91c2VyL3Byb2ZpbGUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxMDE7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkUllSYnl4c3BuQlpPT2JrSWMxdDFUTzBpanpDcUxrZ3NrbWwzd3NNelgwMnNZSUJ6bXNGY0ciO30=', 1662470071);
+('5FYDRZ09C09V6SH3BDYgnSdV6eEneunuHMx3ctJ9', 101, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:104.0) Gecko/20100101 Firefox/104.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoicDJVdkJsUmxZOGl3TmJjdGRhd1ZiQ3I0UHhCS2lSQXdsOG1jSElwYyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9ldmVudCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjEwMTtzOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMCRhRExrQ2M0YlpHZi9DZFRSTmxXV3hlNUlUM2xjLzZpMlI4WlE3ZkUwMUYuRkhTN2x6VzVabSI7fQ==', 1662551161);
 
 -- --------------------------------------------------------
 
@@ -1072,11 +1149,11 @@ CREATE TABLE `task_status` (
 --
 
 INSERT INTO `task_status` (`id`, `title`, `description`, `isactive`, `isdelete`, `inuse`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(1, 'Blue', 'Sed et et nihil ut corrupti ut ex aut.', 1, 0, 1, NULL, NULL, NULL, NULL),
-(2, 'Aquamarine', 'Quibusdam libero autem dolores magni non vel et et distinctio dolor est sit.', 1, 0, 1, NULL, NULL, NULL, NULL),
-(3, 'PaleVioletRed', 'Itaque ratione nihil id placeat excepturi non.', 1, 0, 1, NULL, NULL, NULL, NULL),
-(4, 'OrangeRed', 'Dolor ut quia velit aut ipsam voluptatem saepe excepturi.', 1, 0, 1, NULL, NULL, NULL, NULL),
-(5, 'Gainsboro', 'Ea et est fugiat commodi vitae ipsum consequuntur ea quo quasi consequatur iste.', 1, 0, 1, NULL, NULL, NULL, NULL);
+(1, 'Start', 'First Step', 1, 0, 1, NULL, NULL, NULL, NULL),
+(2, 'Working', 'Developer Step', 1, 0, 1, NULL, NULL, NULL, NULL),
+(3, 'Complete', 'Last stage', 1, 0, 1, NULL, NULL, NULL, NULL),
+(4, 'OrangeRed', 'Dolor ut quia velit aut ipsam voluptatem saepe excepturi.', 0, 0, 1, NULL, NULL, NULL, NULL),
+(5, 'Gainsboro', 'Ea et est fugiat commodi vitae ipsum consequuntur ea quo quasi consequatur iste.', 0, 0, 1, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1104,7 +1181,16 @@ CREATE TABLE `userlogs` (
 --
 
 INSERT INTO `userlogs` (`id`, `action_id`, `module_id`, `title`, `description`, `isactive`, `isdelete`, `inuse`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'Settings  Updated', 'Master Settings Updated', 1, 0, 1, 101, NULL, NULL, NULL);
+(1, 1, 1, 'Settings  Updated', 'Master Settings Updated', 1, 0, 1, 101, NULL, NULL, NULL),
+(2, 1, 1, 'Post Save', 'Master Post Save', 1, 0, 1, 101, NULL, NULL, NULL),
+(3, 1, 1, 'Post Update', 'Master Post Updated', 1, 0, 1, 101, NULL, NULL, NULL),
+(4, 1, 1, 'Holiday Created', 'New Holiday Created', 1, 0, 1, 101, NULL, NULL, NULL),
+(5, 1, 1, 'Holiday Created', 'New Holiday Created', 1, 0, 1, 101, NULL, NULL, NULL),
+(6, 1, 1, 'Task Type Update', 'Master Task Type Updated', 1, 0, 1, 101, NULL, NULL, NULL),
+(7, 1, 1, 'Task Type Update', 'Master Task Type Updated', 1, 0, 1, 101, NULL, NULL, NULL),
+(8, 1, 1, 'Task Type Update', 'Master Task Type Updated', 1, 0, 1, 101, NULL, NULL, NULL),
+(9, 1, 1, 'Task Type Update', 'Master Task Type Updated', 1, 0, 1, 101, NULL, NULL, NULL),
+(10, 1, 1, 'Task Type Update', 'Master Task Type Updated', 1, 0, 1, 101, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1234,7 +1320,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `tw
 (98, 'Maye', 'wilderman.jamaal@hotmail.com', '2022-09-06 07:43:03', '$10$WQpf4lYexhcp2sPDSJbEhe8RFMHpwiXLM3gjREyGbFi00HWONSAy.', NULL, NULL, NULL, 'nGe1GlXkmN', NULL, NULL, 'profile-photos/no_image.png', NULL, NULL),
 (99, 'Isidro', 'vleuschke@hotmail.com', '2022-09-06 07:43:04', '$10$WQpf4lYexhcp2sPDSJbEhe8RFMHpwiXLM3gjREyGbFi00HWONSAy.', NULL, NULL, NULL, '8lm4FVmpbG', NULL, NULL, 'profile-photos/no_image.png', NULL, NULL),
 (100, 'Brooks', 'casandra.mclaughlin@gmail.com', '2022-09-06 07:43:04', '$10$WQpf4lYexhcp2sPDSJbEhe8RFMHpwiXLM3gjREyGbFi00HWONSAy.', NULL, NULL, NULL, 'OUD25jFT7h', NULL, NULL, 'profile-photos/no_image.png', NULL, NULL),
-(101, 'Admin', 's@gmail.com', NULL, '$2y$10$RYRbyxspnBZOObkIc1t1TO0ijzCqLkgskml3wsMzX02sYIBzmsFcG', NULL, NULL, NULL, NULL, NULL, NULL, 'profile-photos/nGwug1maUxxtsrAWWA41pGxXeFzKOiOrMT9s8lJL.png', '2022-09-06 07:43:42', '2022-09-06 07:44:25');
+(101, 'Admin', 's@gmail.com', NULL, '$2y$10$aDLkCc4bZGf/CdTRNlWWxe5IT3lc/6i2R8ZQ7fE01F.FHS7lzW5Zm', NULL, NULL, NULL, NULL, NULL, NULL, 'profile-photos/nGwug1maUxxtsrAWWA41pGxXeFzKOiOrMT9s8lJL.png', '2022-09-06 07:43:42', '2022-09-06 08:04:51');
 
 --
 -- Indexes for dumped tables
@@ -1271,6 +1357,12 @@ ALTER TABLE `connected_accounts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `connected_accounts_user_id_id_index` (`user_id`,`id`),
   ADD KEY `connected_accounts_provider_provider_id_index` (`provider`,`provider_id`);
+
+--
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `customers`
@@ -1469,6 +1561,12 @@ ALTER TABLE `connected_accounts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
@@ -1484,7 +1582,7 @@ ALTER TABLE `departments`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1502,7 +1600,7 @@ ALTER TABLE `flagges`
 -- AUTO_INCREMENT for table `holidays`
 --
 ALTER TABLE `holidays`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `issues`
@@ -1520,7 +1618,7 @@ ALTER TABLE `labels`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -1538,7 +1636,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `projects`
@@ -1580,7 +1678,7 @@ ALTER TABLE `task_status`
 -- AUTO_INCREMENT for table `userlogs`
 --
 ALTER TABLE `userlogs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`

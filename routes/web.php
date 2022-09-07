@@ -25,6 +25,7 @@ use App\Http\Controllers\Home;
 */
 
     Route::resource('/', Home::class);
+    Route::post('contact_us', [Home::class,'contact_us'])->name('contact_us'); 
 
 
 
@@ -58,8 +59,12 @@ Route::middleware([
     Route::post('create_activity', [Activitys::class,'create_activity_profile'])->name('create_activity'); 
     Route::post('update_activity', [Activitys::class, 'update_activity_profile'])->name('update_activity'); 
     Route::post('activity_save', [Activitys::class,'updateOrder'])->name('activity_save'); 
+
+
     Route::resource('event', Events::class); 
     Route::post('event_save', [Events::class,'ajax_event_save'])->name('ajax_event_save');  
+    Route::get('holiday', [Events::class, 'holiday'])->name('holiday');
+    Route::post('save_holiday', [Events::class, 'save_holiday'])->name('save_holiday');
 
 
     Route::resource('setting', Settings::class);
