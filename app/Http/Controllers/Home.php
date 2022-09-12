@@ -18,6 +18,24 @@ class Home extends Controller
                 'banners'=>$banners,'projects'=>$projects]);
     }
 
+
+
+      public function view($id)
+    {
+        //return $id;
+         $data=Project::find($id);
+         $user=Project::where(['id'=>$id])->first();
+        $project_category = DB::select('select * from project_category');
+        $assignee = DB::select('select * from users');
+         return view('home.game_view',['page_name'=>$this->page_name,'member'=>$user,
+            'project_category'=>$project_category,
+            'assignee'=>$assignee]);
+    }
+
+
+
+
+
       public function contact_us (Request $request)
     {
 
