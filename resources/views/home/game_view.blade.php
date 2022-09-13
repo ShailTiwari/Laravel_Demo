@@ -27,20 +27,11 @@
   <link href="{{ asset('home_assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="{{ asset('home_assets/css/style.css') }}" rel="stylesheet">
-
-
-  <!-- =======================================================
-  * Template Name: Anyar - v4.8.0
-  * Template URL: https://bootstrapmade.com/anyar-free-multipurpose-one-page-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
-
   <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="fixed-top d-flex align-items-center ">
+ <!--  <div id="topbar" class="fixed-top d-flex align-items-center ">
     <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">{{$main_settings[0]->email}}</a>
@@ -50,7 +41,7 @@
         <a href="{{url('login')}}" class="scrollto">Get Started</a>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center ">
@@ -69,28 +60,6 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -111,52 +80,121 @@
 
         @endif
 
+ <section id="" class="d-flex justify-cntent-center align-items-center">
+ </section>
 
 
-  <main id="main">
-    
-    <!-- ======= Icon Boxes Section ======= -->
-    <section id="icon-boxes" class="icon-boxes">
-      <div class="container">
 
-        <div class="row">
-          @foreach($projects as $project)
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
-            <div class="icon-box">
-              <div class="pic"><img src="{{ url('images/project/'.$project->icon_picture) }}" class="img-fluid" alt=""  width="50" height="50"></div>
-              <h4 class="title"><a href="{{url('game_view/'.$project->id)}}">{{ $project->title }}</a></h4>
-              <p class="description">{{ $project->description }}</p>
-            </div>
-          </div>
-           @endforeach
+ <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+  <div class="section-title">
+     <h4>{{$project_info['title']}}</h4>
+    <span>{{$project_info['description']}}</span>
+  
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr class="table-warning" ><th>Date</th><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+  </thead>
+  <tbody>
+<div class="days">
+<?php
+  $result_array=$game_result;
+  print_r($result_array);
+  $years =  array( date("Y",strtotime("-1 year")), date("Y") );
+  foreach(range(0, 1) as $i) 
+  {
+  $year=$years[$i];
+  $months =  array( 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' );
+
+  print_r($months);
+  $days = array( 31,(strtotime("1 Mar ".$year) - strtotime("1 Feb ".$year)) / ( 24 * 60 * 60 ),31, 30, 31, 30, 31, 31, 30, 31, 30, 31 );
+  $wday = array( '', '', '', '', '', '', '' );
+  $cal = array();
+  foreach(range(0, 11) as $i) 
+  {
+    $firstday = getdate(strtotime('1 '.$months[$i].' '.$year));
+    $fromday = $firstday['wday'];
+    $leftday =  7 - ( $fromday + $days[$i] ) % 7;
+    $cal[] = array_merge( array_slice($wday, 0, $fromday),
+                          range(1, $days[$i]),
+                          array_slice($wday, 0, $leftday)
+                        );
+  }
+?>
+
+
+
+<?php foreach(range(0, 11) as $i) : ?>
+<?php $totaldays = 0;
+$month_int=$i+1;
+$totaldays = cal_days_in_month(CAL_GREGORIAN, $month_int, $year); 
+ ?>
+
+    <?php  
+      $start_date='1';
+     echo "<td class='table-danger' >{$start_date}-{$month_int}-{$year} To {$cal[$i][6]}-{$month_int}-{$year}</td>";
+    foreach($cal[$i] as $k => $v) 
+    {
+      $last_date=$totaldays;
+      if($k && !($k % 7)) 
+      {
+        if ($totaldays<7+$k && $v!='' && $v>=$totaldays) 
+           {
+            $last_date=$totaldays;
+           } 
+
+          else if($cal[$i][6+$k]=='') 
+           {
+            $last_date=$totaldays;
+           } 
+           else
+           {
+            $last_date=$cal[$i][6+$k];
+           }
+
+           if ($v!='') 
+           {
+             echo "</tr><tr><td class='table-danger'>{$v}-{$month_int}-{$year} To {$last_date}-{$month_int}-{$year} </td>";
+           }
+
+      }
+
+    if ($totaldays>=$k && $v!='') 
+      {
+       echo "<td>{$v} </td>";
+      } 
+
+       else if ($totaldays>=$k-4) 
+      {
+       echo "<td class='bg-danger'>{$v}</td>";
+      }
+    }
+    ?>
+    </tr>
+
+<?php endforeach ?>
+
+<?php } ?>
+
+  </div>
+  </tbody>
+</table>
 
         </div>
+        </div>
+  </section>
+  <!-- End Hero -->
 
-      </div>
-    </section><!-- End Icon Boxes Section -->
-
-
+  <main id="main">
+   
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h4>What can we help you with?</h4>
-            <p>Provide your email address to let us help you better.</p>
-          </div>
-          <div class="col-lg-6">
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+  
 
     <div class="footer-top">
       <div class="container">
