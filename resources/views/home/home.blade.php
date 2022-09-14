@@ -68,6 +68,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#team">Live Result</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
@@ -152,16 +153,58 @@
   <main id="main">
     
     <!-- ======= Icon Boxes Section ======= -->
-    <section id="icon-boxes" class="icon-boxes">
+    <section id="icon-boxes" class="icon-boxes pricing">
       <div class="container">
-
         <div class="row">
           @foreach($projects as $project)
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+          <div class="col-lg-3 mt-4" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="pic"><img src="{{ url('images/project/'.$project->icon_picture) }}" class="img-fluid" alt=""  width="50" height="50"></div>
               <h4 class="title"><a href="{{url('game_view/'.$project->id)}}">{{ $project->title }}</a></h4>
               <p class="description">{{ $project->description }}</p>
+               <div class="btn-wrap">
+                <a href="{{url('jodi/'.$project->id)}}" class="btn-buy">Jodi</a>
+              </div>
+               <div class="btn-wrap">
+                <a href="{{url('pannel/'.$project->id)}}" class="btn-buy">Pannel</a>
+              </div>
+            </div>             
+          </div>
+           @endforeach
+        </div>
+      </div>
+    </section><!-- End Icon Boxes Section -->
+
+
+
+
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Live Result</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+
+          @foreach($projects as $project)
+          <div class="col-lg-12 mt-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>{{ $project->title }}</h4>
+                <span>{{ $project->description }}</span>
+                <p>{{ $project->description }}</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
             </div>
           </div>
            @endforeach
@@ -169,7 +212,11 @@
         </div>
 
       </div>
-    </section><!-- End Icon Boxes Section -->
+    </section><!-- End Team Section -->
+
+
+
+
 
 
     <!-- ======= About Us Section ======= -->
@@ -801,7 +848,7 @@ R&D investment destination for leading ISVs across the world.
 
     <div class="footer-top">
       <div class="container">
-        <div class="row">
+        <!-- <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
@@ -849,7 +896,7 @@ R&D investment destination for leading ISVs across the world.
             </div>
           </div>
 
-        </div>
+        </div> -->
       </div>
     </div>
 

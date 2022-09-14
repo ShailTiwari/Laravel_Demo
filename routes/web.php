@@ -26,6 +26,8 @@ use App\Http\Controllers\Home;
 
     Route::resource('/', Home::class);
     Route::get('game_view/{id}', [Home::class, 'view']); 
+    Route::get('jodi/{id}', [Home::class, 'jodi']); 
+    Route::get('pannel/{id}', [Home::class, 'pannel']); 
     Route::post('contact_us', [Home::class,'contact_us'])->name('contact_us'); 
 
 

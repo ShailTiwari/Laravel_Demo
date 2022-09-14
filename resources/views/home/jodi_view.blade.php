@@ -94,7 +94,7 @@
 
 <table class="table table-bordered">
   <thead class="thead-dark">
-    <tr class="table-warning" ><th>Date</th><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+    <tr class="table-warning" ><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
   </thead>
   <tbody>
 <div class="days">
@@ -127,7 +127,6 @@
               $month_int=$i+1;
               $totaldays = cal_days_in_month(CAL_GREGORIAN, $months_int[$i], $year); 
                $start_date='1';
-     echo "<td class='table-danger' >{$start_date}-{$month_int}-{$year} To {$cal[$i][6]}-{$month_int}-{$year}</td>";
                 foreach($cal[$i] as $k => $v) 
                 {
                  
@@ -139,8 +138,6 @@
                    {                     
                      $current_date="aa";
                    }
-                   
-
 
                    foreach ($game_result as $key => $val) 
                             {
@@ -192,21 +189,14 @@
 
            if ($v!='') 
            {
-             echo "</tr><tr><td class='table-danger'>{$v}-{$month_int}-{$year} To {$last_date}-{$month_int}-{$year} </td>";
+             echo "</tr><tr>";
            }
 
       }
 
     if ($totaldays>=$k && $v!='') 
       {
-       //echo "<td id=".$current_date." class=".$class_colour.">{$z}</td>";
-       echo "<td  id=".$current_date." class=".$class_colour.">
-       <table class='table table-bordered' >
-       <tr><td>{$z}</td><td>{$z}</td><td>{$z}</td></tr>
-       <tr><td>{$z}</td><td>{$z}</td><td>{$z}</td></tr>
-       <tr><td>{$z}</td><td>{$z}</td><td>{$z}</td></tr>
-       </table>
-       </td>";
+       echo "<td id=".$current_date." class=".$class_colour.">{$z}</td>";
       } 
 
        else if ($totaldays>=$k-4) 
