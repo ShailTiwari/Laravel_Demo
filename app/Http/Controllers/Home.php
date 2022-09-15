@@ -14,8 +14,16 @@ class Home extends Controller
       $page_name="Home";
       $banners = DB::select('SELECT * from banners where isactive=1 and isdelete=0 and inuse=1 order by action_id ASC');
       $projects= Project::all(); 
+      $id=1;
+      $game_result = DB::select('select id,project_id,result, DATE_FORMAT(result_date, "%e-%b-%Y") as start from results where project_id='.$id);
+      $live_result = DB::select("SELECT (SELECT result from results where project_id=a.id and 
+date_format(result_date,'%Y-%m-%d') BETWEEN DATE_FORMAT(CURDATE(), '%Y-%m-%d') and DATE_FORMAT(CURDATE(), '%Y-%m-%d') group by project_id limit 1 ) as result,
+ a.*  from projects as a  left join results as b 
+ON a.id = b.project_id where a.isactive=1   order by a.id asc");
+
+
       return view('home.home',['page_name'=>$page_name,
-                'banners'=>$banners,'projects'=>$projects]);
+                'banners'=>$banners,'projects'=>$projects,'live_results'=>$live_result,'game_result'=>$game_result]);
     }
 
 
@@ -27,7 +35,7 @@ class Home extends Controller
          $data=Project::find($id);
          $project_info=Project::where(['id'=>$id])->first();
          $project_category = DB::select('select * from project_category');
-         $game_result = DB::select('select id,employee_id,remarks, DATE_FORMAT(start, "%e-%b-%Y") as start from attendances where employee_id='.$id);
+         $game_result = DB::select('select id,project_id,result, DATE_FORMAT(result_date, "%e-%b-%Y") as start from results where project_id='.$id);
         // return  $game_result;
         $assignee = DB::select('select * from users');
          return view('home.game_view',['page_name'=>$page_name,'project_info'=>$project_info,'game_result'=>$game_result,
@@ -43,7 +51,9 @@ class Home extends Controller
          $data=Project::find($id);
          $project_info=Project::where(['id'=>$id])->first();
          $project_category = DB::select('select * from project_category');
-         $game_result = DB::select('select id,employee_id,remarks, DATE_FORMAT(start, "%e-%b-%Y") as start from attendances where employee_id='.$id);
+         $game_result = DB::select('select id,project_id,result, DATE_FORMAT(result_date, "%e-%b-%Y") as start from results where project_id='.$id);
+
+
         // return  $game_result;
         $assignee = DB::select('select * from users');
          return view('home.jodi_view',['page_name'=>$page_name,'project_info'=>$project_info,'game_result'=>$game_result,
@@ -59,7 +69,7 @@ class Home extends Controller
          $data=Project::find($id);
          $project_info=Project::where(['id'=>$id])->first();
          $project_category = DB::select('select * from project_category');
-         $game_result = DB::select('select id,employee_id,remarks, DATE_FORMAT(start, "%e-%b-%Y") as start from attendances where employee_id='.$id);
+         $game_result = DB::select('select id,project_id,result,l1,l2,l3,r1,r2,r3, DATE_FORMAT(result_date, "%e-%b-%Y") as start from results where project_id='.$id);
         // return  $game_result;
         $assignee = DB::select('select * from users');
          return view('home.pannel_view',['page_name'=>$page_name,'project_info'=>$project_info,'game_result'=>$game_result,

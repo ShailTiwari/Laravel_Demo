@@ -60,7 +60,6 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a id="current_result" class="current_result nav-link scrollto" href="#aa">Today Result</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -123,6 +122,13 @@
 
              foreach(range(0, 11) as $i)
              {
+              $z='';
+              $l1='';
+              $l2='';
+              $l3='';
+              $r1='';
+              $r2='';
+              $r3='';
               $totaldays = 0;
               $month_int=$i+1;
               $totaldays = cal_days_in_month(CAL_GREGORIAN, $months_int[$i], $year); 
@@ -147,7 +153,13 @@
                              if ($v!='' && $v.'-'.$months[$i].'-'.$year == $val->start) 
                               {
                                 $v.'-'.$months[$i].'-'.$year.'</br>';
-                                $z= $val->remarks;
+                                $z= $val->result;
+                                $l1= $val->l1;
+                                $l2= $val->l2;
+                                $l3= $val->l3;
+                                $r1= $val->r1;
+                                $r2= $val->r2;
+                                $r3= $val->r3;
                                 $array = str_split($z);
                                 if($array[0]==$array[1])
                                 {
@@ -160,10 +172,22 @@
                               else if ($v!='')
                               {
                                 $z='**';
+                                $l1='*';
+                                $l2='*';
+                                $l3='*';
+                                $r1='*';
+                                $r2='*';
+                                $r3='*';
                               }
                               else
                               {
                                 $z='';
+                                $l1='';
+                                $l2='';
+                                $l3='';
+                                $r1='';
+                                $r2='';
+                                $r3='';
                               }
                              }
 
@@ -194,6 +218,11 @@
            {
              echo "</tr><tr><td class='table-danger'>{$v}-{$month_int}-{$year} To {$last_date}-{$month_int}-{$year} </td>";
            }
+           else
+           {
+
+           echo "</tr><tr>";
+           }
 
       }
 
@@ -202,16 +231,30 @@
        //echo "<td id=".$current_date." class=".$class_colour.">{$z}</td>";
        echo "<td  id=".$current_date." class=".$class_colour.">
        <table class='table table-bordered' >
-       <tr><td>{$z}</td><td>{$z}</td><td>{$z}</td></tr>
-       <tr><td>{$z}</td><td>{$z}</td><td>{$z}</td></tr>
-       <tr><td>{$z}</td><td>{$z}</td><td>{$z}</td></tr>
+       <tr><td>{$l1}</td><td></td><td>{$r1}</td></tr>
+       <tr><td>{$l2}</td><td>{$z}</td><td>{$r2}</td></tr>
+       <tr><td>{$l3}</td><td></td><td>{$r3}</td></tr>
        </table>
        </td>";
       } 
 
        else if ($totaldays>=$k-4) 
       {
+       if ($v!='') 
+       {
+          echo "<td  id=".$current_date." class=".$class_colour.">
+       <table class='table table-bordered' >
+       <tr><td>{$l1}</td><td></td><td>{$r1}</td></tr>
+       <tr><td>{$l2}</td><td>{$z}</td><td>{$r2}</td></tr>
+       <tr><td>{$l3}</td><td></td><td>{$r3}</td></tr>
+       </table>
+       </td>";
+       }
+       else
+       {
+
        echo "<td  id=".$current_date." class=".$class_colour.">{$z}</td>";
+       }
       }
     }
     ?>

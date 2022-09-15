@@ -60,7 +60,6 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a id="current_result" class="current_result nav-link scrollto" href="#aa">Today Result</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -98,9 +97,7 @@
   </thead>
   <tbody>
 <div class="days">
-<?php
-  //$result_array=$game_result;
- 
+@php
             $years =  array( date("Y",strtotime("-1 year")), date("Y") );
             foreach(range(0, 1) as $i) 
             {
@@ -122,7 +119,8 @@
             }
 
              foreach(range(0, 11) as $i)
-             {
+             { 
+              $z='';
               $totaldays = 0;
               $month_int=$i+1;
               $totaldays = cal_days_in_month(CAL_GREGORIAN, $months_int[$i], $year); 
@@ -144,7 +142,7 @@
                              if ($v!='' && $v.'-'.$months[$i].'-'.$year == $val->start) 
                               {
                                 $v.'-'.$months[$i].'-'.$year.'</br>';
-                                $z= $val->remarks;
+                                $z= $val->result;
                                 $array = str_split($z);
                                 if($array[0]==$array[1])
                                 {
@@ -191,6 +189,7 @@
            {
              echo "</tr><tr>";
            }
+           echo "</tr><tr>";
 
       }
 
@@ -204,11 +203,11 @@
        echo "<td  id=".$current_date." class=".$class_colour.">{$z}</td>";
       }
     }
-    ?>
+   @endphp
     </tr>
 
 
-<?php } } ?>
+@php } } @endphp
 
   </div>
   </tbody>
